@@ -8,7 +8,7 @@ highlight-style: github
 format:
   html:
     theme: cosmo
-    monobackgroundcolor: rgb(255,250,240)
+    monobackgroundcolor: rgb(243,252,255)
     toc: true
     toc-location: left
     reference-location: document
@@ -52,7 +52,7 @@ La réponse est en format normal
 
 ## Exercice 1
 
-L'une des forces de ***R*** est qu'il est capable de traiter de grands jeux de données de manière très rapide. Cet avantage a évidemment son prix : la lecture des données peut paraître ennuyeuse, particulièrement lorsqu'elles se trouvent sur support informatique. Il existe cependant plusieurs possibilités pour lire dans ***R*** des données contenues dans un fichier. Si elles se présentent sous la forme d'une liste de valeurs telles que chacune d'elles figure sur une ligne ou si elles sont séparées par un espace, on peut utiliser la commande `scan()` qui renvoie un vecteur. Lorsque les données se présentent sous la forme d'une table, i.e. une ligne par observation et une colonne par variable, l'instruction à utiliser est `read.table()` si les données se trouvent dans un fichier texte (ASCII). Des variantes de cette fonction existent comme par exemple `read.csv2()` [^4]. Dans cet exercice, nous allons enregistrer dans ***R*** les données qui seront utilisées dans le travail pratique. Vous pouvez organiser comme vous le souhaitez votre travail. Néanmoins, nous vous suggérons de créer deux répertoires : l'un contenant les données et l'autre votre travail (script, rapport, résultats). Pour être plus structuré, vous pouvez même ajouter un sous-répertoire à votre répertoire de travail pour y stocker vos graphiques; vous pouvez également créer un projet pour mieux gérer votre travail pratique.
+L'une des forces de ***R*** est qu'il est capable de traiter de grands jeux de données de manière très rapide. Cet avantage a évidemment son prix : la lecture des données peut paraître ennuyeuse, particulièrement lorsqu'elles se trouvent sur support informatique. Il existe cependant plusieurs possibilités pour lire dans ***R*** des données contenues dans un fichier. Si elles se présentent sous la forme d'une liste de valeurs telles que chacune d'elles figure sur une ligne ou si elles sont séparées par un espace, on peut utiliser la commande `scan()` qui renvoie un vecteur. Lorsque les données se présentent sous la forme d'une table, i.e. une ligne par observation et une colonne par variable, l'instruction à utiliser est `read.table()` si les données se trouvent dans un fichier texte (ASCII). Des variantes de cette fonction existent comme par exemple `read.csv2()` \[\^4\]. Dans cet exercice, nous allons enregistrer dans ***R*** les données qui seront utilisées dans le travail pratique. Vous pouvez organiser comme vous le souhaitez votre travail. Néanmoins, nous vous suggérons de créer deux répertoires : l'un contenant les données et l'autre votre travail (script, rapport, résultats). Pour être plus structuré, vous pouvez même ajouter un sous-répertoire à votre répertoire de travail pour y stocker vos graphiques; vous pouvez également créer un projet pour mieux gérer votre travail pratique.
 
 ::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
@@ -1007,7 +1007,6 @@ plt.title("Iris Dataset")
 plt.show()
 ```
 :::
-
 
 ## Conclusion
 
