@@ -8,41 +8,45 @@ editor: visual
 
 ## Introduction
 
+Dans le cadre du cours de Probabilités et statistiques à la HEIG-VD, nous avons entrepris un travail pratique visant à approfondir notre compréhension des concepts théoriques par le biais de l'analyse exploratoire des données. Ce rapport présente les résultats tirés de cette expérience.
+
+**Immersion dans l'univers de R**
+
+R, largement plébiscité dans le monde académique et scientifique, est un outil puissant pour le traitement et l'analyse des données. Il offre une vaste gamme de fonctionnalités, allant de la manipulation des données à la production de visualisations graphiques sophistiquées, en passant par la création de rapports complets. Cette partie du travail vise à nous familiariser avec ce logiciel, en mettant l'accent sur son potentiel en matière d'exploration des données.
+
+**Application concrète des concepts théoriques**
+
+Au-delà de la simple découverte de R, ce travail pratique sert de passerelle entre les concepts théoriques étudiés en classe et leur mise en application concrète. Nous avons donc exploré comment interpréter efficacement les graphiques, comprendre les nuances des indicateurs statistiques, et visualiser les données de manière pertinente.
+
 ::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Note
 
-**Dans ce rapport, les questions et parties issues de la consigne fournie sont représentées par des "callouts" bleus.**
+**Dans ce rapport, les questions et parties issues de la consigne fournie sont représentées par des "callouts" bleus. Le texte des questions est en gras et est suivie d'une séparation.**
 
-**Le texte des questions est en gras**
-
-**La fin de la question principale est suivie d'une séparation**
-
----
+------------------------------------------------------------------------
 
 La réponse est en format normal
 
 ::: {.callout-note icon="false" appearance="minimal"}
 ## Questions imbriquées.
 
-**Si des questions sont posées de manière imbriquées, elles sont représentées par des *callouts* imbriqués**
-
-**Le texte de la question est toujours en gras, mais in n'y a pas de spéaration**
+**Si des questions sont posées de manière imbriquées, elles sont représentées par des *callouts* imbriqués. Le texte de la question est toujours en gras, mais il n'y a pas de séparation**
 
 La réponse est en format normal
-
 :::
-
 :::
 
 ## Exercice 1
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+L'une des forces de ***R*** est qu'il est capable de traiter de grands jeux de données de manière très rapide. Cet avantage a évidemment son prix : la lecture des données peut paraître ennuyeuse, particulièrement lorsqu'elles se trouvent sur support informatique. Il existe cependant plusieurs possibilités pour lire dans ***R*** des données contenues dans un fichier. Si elles se présentent sous la forme d'une liste de valeurs telles que chacune d'elles figure sur une ligne ou si elles sont séparées par un espace, on peut utiliser la commande `scan()` qui renvoie un vecteur. Lorsque les données se présentent sous la forme d'une table, i.e. une ligne par observation et une colonne par variable, l'instruction à utiliser est `read.table()` si les données se trouvent dans un fichier texte (ASCII). Des variantes de cette fonction existent comme par exemple `read.csv2()` [^4]. Dans cet exercice, nous allons enregistrer dans ***R*** les données qui seront utilisées dans le travail pratique. Vous pouvez organiser comme vous le souhaitez votre travail. Néanmoins, nous vous suggérons de créer deux répertoires : l'un contenant les données et l'autre votre travail (script, rapport, résultats). Pour être plus structuré, vous pouvez même ajouter un sous-répertoire à votre répertoire de travail pour y stocker vos graphiques; vous pouvez également créer un projet pour mieux gérer votre travail pratique.
+
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
 
-**Les données se trouvent dans le répertoire data /data**
+**Les données que nous allons traiter dans ce travail pratique se trouvent dans la page [Moodle du cours](https://cyberlearn.hes-so.ch/course/view.php?id=12354 "Moodle"). Copiez-les dans votre répertoire de données.**
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question b.
 
 **Charger les données dans R en utilisant les fonctions `scan()` et `read.table()`**
@@ -54,7 +58,7 @@ examen <- read.table("data/examen.txt", header = TRUE)
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question c.
 
 **Pour voir le contenu de l'objet cpus, taper l'instruction `cpus`**
@@ -68,7 +72,7 @@ examen
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d.
 
 **Pour accéder à la 12ème composante du vecteur `cpus`, utiliser la commande**
@@ -78,7 +82,7 @@ cpus[12]
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question e.
 
 **Pour obtenir une partie du vecteur `cpus` comme par exemple les éléments du vecteur compris entre la 3ème et la 19ème composante, taper l'instruction**
@@ -88,7 +92,7 @@ cpus[3:19]
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question f.
 
 **Pour extraire du vecteur `cpus` ses éléments supérieurs à 190, utiliser la commande**
@@ -98,7 +102,7 @@ cpus[cpus>190]
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question g.
 
 **Il est possible d'accéder directement aux composantes d'une table par le nom. Par exemple, si on veut afficher la composante `note` de l'objet `examen`, on peut utiliser la commande**
@@ -108,7 +112,7 @@ examen$note
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question h.
 
 **On peut aussi accéder en profondeur aux composantes comme par exemple par la commande**
@@ -118,7 +122,7 @@ examen$note[7]
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question i.
 
 **La méthode la plus simple pour créer un vecteur consiste à énumérer ses éléments à l'aide de la fonction `c()` :**
@@ -134,7 +138,7 @@ couleurs
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question j.
 
 **On peut ôter des composantes d'un vecteur en indiquant entre crochets les indices précédés du signe négatif comme par exemple**
@@ -144,7 +148,7 @@ mesdonnees[-c(3:5)]
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question k.
 
 **Finalement, le contenu de votre environnement de travail est affiché à l'aide de la fonction `ls()`.**
@@ -156,9 +160,23 @@ ls()
 
 ## Exercice 2
 
-La performance relative au processeur IBM 370/158-3 de 50 processeurs d'ordinateurs a été relevée. L'objet `cpus` contient les valeurs observées.
+La performance relative au processeur *IBM 370/158-3* de $50$ processeurs d'ordinateurs a été relevée.
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+<br>
+
+$$
+\begin{array}{cccccccccc}
+46  & 110 & 38  & 22  & 11 & 510 & 38  & 76  & 21  & 92 \\[1mm]
+44  & 66  & 24  & 10  & 25 & 915 & 26  & 56  & 40  & 7 \\[1mm]
+185 & 141 & 14  & 24  & 19 & 24  & 32  & 33  & 370 & 58 \\[1mm]
+12  & 66  & 62  & 12  & 45 & 133 & 64  & 144 & 36  & 130 \\[1mm]
+16  & 36  & 65  & 136 & 60 & 18  & 66  & 30  & 100 & 36\\[1mm]
+\end{array}
+$$\
+
+L'objet `cpus` contient les valeurs observées.
+
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
 
 **Construire un diagramme branche-et-feuilles, un histogramme et une boîte à moustaches des données observées à l'aide des commandes ci-dessous.**
@@ -177,7 +195,6 @@ par(mfrow=c(1,1))
 ```
 
 ::: {.callout-note icon="false" appearance="minimal"}
-
 ## Question a1.
 
 **Quels sont les effets de cette commande ?**
@@ -189,7 +206,6 @@ par(mfrow=c(1,1))
 `hist(cpus, xlab="performance relative", ylab="fréquence", main="", col="darkslategray4")` produit un histogramme de la performance relative des cpus. Les labels des axes x et y sont respectivement "performance relative" et "fréquence". La couleur du remplissage des barres est "darkslategray4".
 
 `boxplot(cpus, xlab="performance relative", col="darkslategray4", horizontal=T)` produit une boîte à moustaches (boxplot) des données. Le graphique est affiché horizontalement (grâce à `horizontal=T`).
-
 :::
 
 ::: {.callout-note icon="false" appearance="minimal"}
@@ -201,28 +217,26 @@ par(mfrow=c(1,1))
 
 `par(mfrow=c(1,1))` réinitialise les paramètres graphiques pour afficher un seul graphique à la fois.
 :::
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question b.
 
 **Commenter la distribution des valeurs observées en se basant sur les graphiques de la Figure 1 : valeur(s) atypique(s), asymétrie.**
 
----
+------------------------------------------------------------------------
 
 Distribution: Nous pouvons observer sur l'histogramme une distribution asymétrique positive
 
 Valeurs atypiques: Nous pouvons observer sur le boxplot qu'il y a 4 valeurs atypiques: 185, 370, 510 et 915.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question c.
 
 **Calculer la performance relative médiane et la performance relative moyenne des valeurs observées en utilisant les fonctions de R adéquates.**
 
----
+------------------------------------------------------------------------
 
 Avec la fonction `median()` nous calculons la performance médiane:
 
@@ -246,11 +260,10 @@ print(paste("Performance relative moyenne:", performance_moyenne))
 **Est-il plus approprié d'utiliser la médiane ou la moyenne ?**
 
 Etant donné que nous avons des valeurs atypiques qui sont nettement plus élevées que la majorité des autres valeurs, elles peuvent avoir un effet significatif sur la moyenne, la rendant plus élevée qu'elle ne le serait autrement. Dans ce cas, la médiane pourrait être une meilleure mesure de la tendance centrale pour cet ensemble de données.
-
 :::
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d.
 
 **Déterminer le(s) mode(s) des valeurs observées à l'aide des commandes suivantes :**
@@ -260,14 +273,14 @@ n.cpus<-table(cpus)
 as.numeric(names(n.cpus)[n.cpus==max(n.cpus)])
 ```
 
----
+------------------------------------------------------------------------
 
 La commande ci-dessus permet de déterminer la valeur ou les valeurs qui apparaissent le plus souvent, c'est-à-dire le mode ou les modes de l'ensemble de données.
 
 Les valeurs obtenues `24 36 66` indiquent que l'ensemble de données est multimodal. cela signifie qu'il a plusieurs "pics". Une distribution multimodale peut suggérer la présence de sous-groupes distincts.
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question e.
 
 **Que fait la commande suivante ?**
@@ -276,7 +289,7 @@ Les valeurs obtenues `24 36 66` indiquent que l'ensemble de données est multimo
 summary(cpus)
 ```
 
----
+------------------------------------------------------------------------
 
 La commande `summary(cpus)` fournit un aperçu statistique basique de l'objet cpus. Pour un vecteur comme `cpus`, cela retourne :
 
@@ -286,10 +299,9 @@ La commande `summary(cpus)` fournit un aperçu statistique basique de l'objet cp
 -   Mean: La moyenne arithmétique de l'ensemble de données.
 -   3rd Qu.: Le troisième quartile. 75% des données sont inférieures ou égales à cette valeur.
 -   Maximum: La plus grande valeur de l'ensemble de données.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question f.
 
 **En effectuant aucun calcul, décrire l'effet sur la moyenne et sur la médiane des trois interventions suivantes :**
@@ -302,7 +314,6 @@ La commande `summary(cpus)` fournit un aperçu statistique basique de l'objet cp
 Moyenne : Elle diminuera, mais étant donné que 43 est proche de la moyenne initiale de 86.88, l'effet sur la moyenne sera minimal.
 
 Médiane : Étant donné que la médiane actuelle est de 42, l'ajout d'une valeur de 43 pourrait déplacer légèrement la médiane vers le haut, en fonction de la répartition exacte des données.
-
 :::
 
 ::: {.callout-note icon="false" appearance="minimal"}
@@ -326,12 +337,12 @@ Médiane : De même, la médiane sera divisée par 3.
 :::
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question g.
 
 **Calculer l'écart-type des performances relatives une fois avec les valeurs atypiques et une fois sans en utilisant la fonction sd(). Les valeurs atypiques peuvent être déterminées à l'aide de la fonction `boxplot()` avec `plot=FALSE` comme argument.**
 
----
+------------------------------------------------------------------------
 
 Avec toutes les valeurs (incluant les atypiques) :
 
@@ -369,15 +380,14 @@ print(paste("Ecart type sans valeurs atypiques:", sd(cpus_sans_atypiques)))
 **Que constate-t-on ? L'écart-type est-il un indicateur robuste ?**
 
 Les valeurs atypiques ont un effet majeur sur l'écart-type, ce qui souligne la sensibilité de cet indicateur aux valeurs extrêmes. Une petite quantité de valeurs atypiques peut fausser la mesure de la dispersion, rendant l'écart-type beaucoup plus élevé qu'il ne le serait autrement. L'écart-type n'est pas un indicateur robuste en présence de valeurs atypiques, car il ne résiste pas bien à ces perturbations.
-
 :::
 :::
 
 ## Exercice 3
 
-Les étudiants suivant un cours de Probabilités et Statistique dans une école d'ingénierie ont passé l'examen de fin d'unité. Le cours était donné par le même professeur à étudiants répartis en deux groupes notés A et B. Les résultats obtenus sont contenus dans l'objet `examen`. On se demande si une différence significative existe entre les deux groupes à l'examen.
+Les étudiants suivant un cours de Probabilités et Statistique dans une école d'ingénierie ont passé l'examen de fin d'unité. Le cours était donné par le même professeur à $32$ étudiants répartis en deux groupes notés *A* et *B*. Les résultats obtenus figurent dans la table ci-dessous et sont contenus dans l'objet `examen`.
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
 
 **Tracer les boîtes à moustaches en parallèle en utilisant les commandes suivantes :**
@@ -389,15 +399,14 @@ boxplot(note~groupe, data=examen, ylim=c(1,6), xlab="groupe",
         varwidth=T, col=lblue, main="examen")
 abline(h=4, lty=2)
 ```
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question b.
 
 **Rajouter les bâtonnets des notes des étudiants des deux classes, sur le côté gauche des boîtes à moustaches pour la classe (side=2 comme argument de la fonction rug()) et sur le côté droite pour la classe (side=4 comme argument de la fonction rug()).**
 
----
+------------------------------------------------------------------------
 
 Rajout des bâtonnets:
 
@@ -420,32 +429,29 @@ rug(note.A, side=2)
 rug(note.B, side=4)
 
 ```
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question c.
 
 **En se basant sur la Figure 2, existe-t-il une différence significative entre les deux groupes à l'examen de fin d'unité ?**
 
----
+------------------------------------------------------------------------
 
 Oui il existe une différence significative. Nous pouvons observer que l'étendue inter-quartile du groupe A et du groupe B ne se superpose (presque) pas, donc que nous avons 2 distributions séparées. Nous avons 75% des élèves du groupe B qui ont une meilleure note, ou une note équivalente que les 25% meilleurs élèves du groupe A.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d.
 
 **Observe-t-on sur les boîtes à moustaches une différence entre les dispersions des deux groupes ?**
 
----
+------------------------------------------------------------------------
 
 Nous pouvons observer que l'étendue et l'étendue inter-quartile du groupe A est plus "grande" que celle du groupe B. Cela signifie que les notes du groupe A ont une plus grande dispersion.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question e.
 
 **Calculer les écarts-types des deux groupes à l'aide des fonctions `by()` et `sd()`.**
@@ -462,16 +468,15 @@ print(paste("Ecart type groupe B:", round(result['B'], 3)))
 **En se basant sur les écarts-types, existe-t-il une différence en dispersion entre les deux groupes à l'examen de fin d'unité ?**
 
 Oui. Le groupe A a un écart-type légèrement plus élevé que le groupe B, ce qui signifie que les scores du groupe A sont légèrement plus dispersés autour de leur moyenne que ceux du groupe B.
-
 :::
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question f.
 
 **Que peut-on déduire en comparant les conclusions établies en c., d. et e. ?**
 
----
+------------------------------------------------------------------------
 
 Comparaison des centres : La médiane du groupe B est supérieure à celle du groupe A, ce qui indique que le centre de la distribution des notes pour le groupe B est plus élevé que pour le groupe A.
 
@@ -482,18 +487,16 @@ Comparaison de la dispersion avec Étendue interquartile : L'IQR du groupe A est
 Comparaison des étendues : Les notes du groupe B vont de plus faibles à plus élevées que celles du groupe A. Il est particulièrement intéressant de noter que le minimum du groupe B (3.200) est supérieur au 1er quartile du groupe A (3.075), ce qui indique une différence notable dans la distribution des scores.
 
 **Conclusion** : Les élèves du groupe B ont généralement obtenu de meilleures notes que ceux du groupe A, comme le montre la médiane. Bien que les notes du groupe A soient légèrement plus dispersées que celles du groupe B, la dispersion dans le groupe A est en réalité assez comparable à celle du groupe B. Le fait que les boîtes à moustaches ne se chevauchent (presque) pas, est également un indicateur fort d'une différence notable entre les groupes.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question g.
 
- **Un autre graphique pour étudier les éventuelles différences entre les deux groupes à l'examen de fin d'unité se trouve dans la Figure 3. À votre avis, entre les boîtes à moustaches en parallèle et le graphique tracé ci-dessus, lequel est le plus approprié ?**
+**Un autre graphique pour étudier les éventuelles différences entre les deux groupes à l'examen de fin d'unité se trouve dans la Figure 3. À votre avis, entre les boîtes à moustaches en parallèle et le graphique tracé ci-dessus, lequel est le plus approprié ?**
 
----
+------------------------------------------------------------------------
 
 Les 2 graphes ne sont pas utilisés dans le même objectif:
-
 
 **Boites à moustache**
 
@@ -513,14 +516,13 @@ Si le principal intérêt est de comparer la visualisation de la forme de la dis
 **Conclusion**
 
 Pour obtenir un maximum d'informations il serait judicieux d'utiliser à la fois le boxplot et le Diagramme de densité
-
 :::
 
 ## Exercice 4
 
 Une partie de la base de données du recensement américain de 1994 a été extraite. Elle concerne 48'842 personnes adultes dont on s'intéresse notamment à l'influence que peut avoir le type de scolarité, formation acquise par l'individu, sur le nombre d'heures de travail par semaine. Par simplicité et pour préserver l'authenticité du système éducatif américain, le nom des variables n'est pas traduit en français.
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
 
 **Nous nous proposons de tracer les boîtes à moustaches en parallèle du temps consacré au travail par les individus recensés. Pour y parvenir, nous utilisons la librairie ggplot2 qu'il faut d'abord installer puis activer dans votre session.**
@@ -551,16 +553,14 @@ colnames(dframe)<-c("education", "hours_per_week")
 str(dframe)
 ```
 
-
 ::: {.callout-note icon="false" appearance="minimal"}
 ## Question a1.
 
 **Pourquoi ce changement de nom de variable ?**
 
----
+------------------------------------------------------------------------
 
 On renomme "hours-per-week" en "hours_per_week". car le caractère `-` peut être interprété comme un opérateur de soustraction mathématique.
-
 :::
 
 ::: {.callout-note icon="false" appearance="minimal"}
@@ -574,19 +574,17 @@ ggplot(dframe, aes(x=hours_per_week, y=education)) +
   geom_boxplot(outlier.size=0, alpha=0.2)
 ```
 
----
+------------------------------------------------------------------------
 
 Le graphique permet de comparer la distribution des heures travaillées par semaine entre différents niveaux d'éducation. Il peut aider à identifier s'il existe des tendances ou des différences dans le nombre d'heures travaillées en fonction du niveau d'éducation.
 
 *Boxplots* : Pour chaque niveau d'éducation, il y a un boxplot qui montre les heures travaillées par semaine. Si les boîtes sont larges, cela indique une grande variabilité dans les heures travaillées. Si elles sont étroites, cela indique une faible variabilité.
 
 *Scatter plot* : Les points bleus montrent des observations individuelles. Grâce à l'option `position="jitter"`.
-
+:::
 :::
 
-:::
-
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question b.
 
 **Calculer la proportion d'observations contenant des valeurs manquantes en utilisant les commandes ci-dessous.**
@@ -598,7 +596,7 @@ n.missing<-rowSums(is.na(AdultUCI))
 sum(n.missing>0)/nrows
 ```
 
----
+------------------------------------------------------------------------
 
 `dim(AdultUCI)` donne les dimensions du dataframe AdultUCI. `48842 15` indique que le dataframe contient 48,842 lignes (observations) et 15 colonnes (variables).
 
@@ -609,23 +607,21 @@ sum(n.missing>0)/nrows
 `sum(n.missing>0)/nrows` : n.missing\>0 renvoie un vecteur logique de la même longueur que n.missing, avec des valeurs TRUE là où le nombre de valeurs manquantes est supérieur à 0, et FALSE ailleurs. `sum(n.missing>0)` compte combien d'observations ont au moins une valeur manquante. Diviser ce nombre par nrows donne la proportion d'observations ayant au moins une valeur manquante.
 
 Le résultat `0.3824577` indique qu'environ 38.25% des observations dans le dataframe ont au moins une valeur manquante.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question c.
 
 **En se basant sur les boîtes à moustaches en parallèle de la Figure 4, pour quel type de formation observe-t-on la plus grande dispersion du temps de travail ? Existe-t-il une différence entre les médianes des types de formation ? En donner brièvement la raison.**
 
----
+------------------------------------------------------------------------
 
 En examinant la largeur des boîtes (IQR) dans les boxplots, nous pouvons voir que le groupe de personnes ayant un niveau de formation `11th` a la plus grande dispersion de temps de travail.
 
 En examinant les valeurs médianes, nous voyons clairement que, globalement, la médiane des heures travaillées par semaine est similaire pour tous les niveaux d'éducation, sauf pour les niveaux `Doctorate` et `Prof-school`.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d.
 
 **Pour chaque type de formation, on peut déterminer puis afficher à l'écran le temps maximal de travail hebdomadaire à l'aide des commandes**
@@ -642,31 +638,29 @@ max(nx)
 names(nx)[nx==max(nx)]
 ```
 
----
+------------------------------------------------------------------------
 
 Pour la majorité des niveaux d'éducation, la valeur maximale de "hours_per_week" est de 99 heures. Il y a 14 niveaux d'éducation pour lesquels certaines personnes ont déclaré travailler 99 heures par semaine.Les seuls niveaux d'éducation où personne n'a déclaré travailler 99 heures par semaine sont "Preschool" et "1st-4th", où les valeurs maximales sont respectivement de 75 et 96 heures.
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d1.
 
 **Est-ce surprenant?**
 
----
+------------------------------------------------------------------------
 
 Oui, cela parrait surprenant. Une semaine compte 168 heures. Si quelqu'un déclare travailler 99 heures par semaine, cela laisse moins de 70 heures pour toutes les autres activités, y compris dormir, manger, les loisirs, etc. Cela peut indiquer une surcharge de travail extrême ou peut-être des erreurs dans les données.
 
 De plus, voir cette valeur maximale sur une large gamme de niveaux d'éducation, du "5th-6th" grade au "Doctorate", suggère que ce n'est pas spécifique à un certain niveau d'éducation. Cela pourrait indiquer une tendance générale ou une particularité dans la manière dont les données ont été collectées ou rapportées.
-
+:::
 :::
 
-:::
-
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question e.
 
 **En s'inspirant des commandes utilisées ci-dessus, déterminer la formation pour laquelle la distribution des temps de travail se caractérise par le plus petit écart-type.**
 
----
+------------------------------------------------------------------------
 
 ```{r}
 # Calculer l'écart-type pour chaque niveau d'éducation
@@ -684,12 +678,12 @@ print(paste("La formation avec le plus petit écart-type est:", education_min_st
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question f.
 
 **Observe-t-on un résultat similaire en utilisant l'étendue interquartiles à l'aide de la fonction `IQR()`?**
 
----
+------------------------------------------------------------------------
 
 ```{r}
 # Calculer l'IQR pour chaque niveau d'éducation
@@ -732,17 +726,16 @@ ggplot(subset_dframe, aes(x=hours_per_week, y=education)) +
 Nous pouvons observer sur le graphique ci-dessus que la formation "Assoc-voc" présente une dispersion plus grande des données autour de la moyenne que la formation "5th-6th".
 
 La formation "5th-6th" présente une dispersion très faible, en particulier dans la moitié centrale des données. de plus, elle a des valeurs extrêmes qui sont relativement symétriques.
-
 :::
 
 ## Exercice 5
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question exercice 5
 
 **Estimer et justifier les valeurs des coefficients de corrélation des séries de données à l'aide de leurs graphiques de nuage de points tracés dans la @fig-scatterplot1, la @fig-scatterplot2, la @fig-scatterplot3 et la @fig-scatterplot1**
 
----
+------------------------------------------------------------------------
 
 ![Graphiques de nuage de points I.](figures/scatterplot5.png){#fig-scatterplot1 fig-align="center" width="80%"}
 
@@ -759,18 +752,17 @@ Les points semblent suivre une tendance parabolique qui ressemble à la courbe $
 ![Graphiques de nuage de points IV.](figures/scatterplot8.png){#fig-scatterplot4 fig-align="center" width="80%"}
 
 Les points semblent suivre une tendance linéaire descendante claire. Cette distribution suggère une forte corrélation négative entre les deux variables. D'après la proximité des points à une droite descendante, j'estimerais que le coefficient de corrélation à environ -0.9. Cela signifie qu'une augmentation d'une variable est associée à une diminution proportionnelle de l'autre variable, et vice versa.
-
 :::
 
 ## Exercice 6
 
 Une étude a été réalisée en botanique sur $150$ iris. Cinq variables ont été relevées : la longueur (`Sepal.Length`) et la largeur (`Sepal.Width`) des sépales, la longueur (`Petal.Length`) et la largeur (`Petal.Width`) des pétales, l'unité utilisée étant le centimètre, ainsi que l'espèce (`Species`) de la fleur (Setosa, Versicolor et Virginica).
 
-![Les trois espèces d'iris.](iris.png){#fig-iris-species fig-pos="h" width="50%"}
+![Les trois espèces d'iris.](figures/iris.png){#fig-iris-species fig-pos="h" width="50%"}
 
 Ces données, qui avaient été récoltées par Edgar Anderson, se trouvent déjà dans ***R***. Pour les utiliser dans votre session actuelle, il suffit de taper dans la console le nom de l'objet, `iris`, qui les contient.
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question a.
 
 **Tracer le nuage de points de la largeur (`Petal.Width`) versus la longueur (`Petal.Length`) des pétales des iris en utilisant les librairies `ggplot2` et `ggforce`.**
@@ -812,38 +804,36 @@ ggforce::geom_mark_ellipse(
 ```
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question b.
 
 **En se basant sur le graphique de nuage de points, existe-t-il une relation entre la largeur et la longueur des pétales des iris ? Dans l'affirmative, de quelle nature est-elle ?**
 
----
+------------------------------------------------------------------------
 
 Il y a une relation positive entre la longueur et la largeur des pétales dans l'ensemble de données iris. Lorsque la longueur du pétale augmente, sa largeur augmente aussi, et vice versa. Cette relation est linéaire et positive.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question c.
 
 **Remarque-t-on des observations inhabituelles dans le graphique de nuage de points ?**
 
----
-      
+------------------------------------------------------------------------
+
 Setosa : Ces iris sont bien séparés des deux autres espèces en ce qui concerne la longueur et la largeur des pétales. Ils ont tendance à avoir des pétales plus petits, à la fois en longueur et en largeur.
 
 Versicolor et Virginica : Ces deux espèces peuvent se chevaucher en termes de longueur et de largeur des pétales, mais elles présentent également certaines différences. Les virginica ont généralement des pétales plus grands que les versicolor.
 
 Il n'y a pas d'observations notoirement "anormales" ou "outliers" dans cet ensemble de données. Cependant, il y a des points qui peuvent être plus éloignés de la majorité de leur groupe, en particulier parmi les versicolor et les virginica. Ces points ne sont pas nécessairement des erreurs, mais ils peuvent être des individus qui présentent des variations naturelles par rapport à la majorité de leur espèce.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question d.
 
 **Déterminer la corrélation entre la largeur et la longueur des pétales des iris en utilisant la fonction `cor()`.**
 
----
+------------------------------------------------------------------------
 
 ```{r}
 correlation <- cor(iris$Petal.Length, iris$Petal.Width)
@@ -851,19 +841,21 @@ print(correlation)
 ```
 
 Nous voyons bien une corrélation positive forte entre les deux variables, indépendamment de l'espèce.
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question e.
 
 **Quelle valeur attribueriez-vous à la longueur des pétales des iris pour distinguer les iris Setosa des deux autres espèces ?**
 
----
+------------------------------------------------------------------------
 
 Nous pouvons créer un graphique incluant des boxplots et un graphique de densité. Cela nous permet de visualiser au mieux la répartition en fonction de la longueur des pétales:
 
 ```{r}
+#| warning: false
+#| message: false
+
 library(ggplot2)
 library(gridExtra)
 
@@ -913,10 +905,9 @@ mean_value
 ```
 
 La valeur de 2.45 peut donc bien distinguer ces deux espèces
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question f.
 
 **Des animations peuvent être créées dans R en utilisant la librairie `gganimate`. Un exemple peut être conçu en utilisant le code ci-dessous.**
@@ -943,10 +934,9 @@ anim +
   ggtitle('Now showing {closest_state}',
         subtitle = 'Frame {frame} of {nframes}')
 ```
-
 :::
 
-::: {.callout-note icon="false" collapse="true" appearance="simple"}
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
 ## Question g.
 
 **(En option bonus) Installer la librairie `reticulate` qui permet de faire du Python à partir de RStudio IDE. Fixer ensuite l'interpréteur Python dans la rubrique *Python* de la boîte de dialogue Options. Cette boîte de dialogue s'affiche à l'écran en utilisant le menu Tools puis Global Options... de RStudio IDE**.
@@ -968,7 +958,7 @@ iris_py = r.iris
 
 ![Graphique de nuage de points des iris](figures/nuage_points_iris.png){#fig-iris-species-python fig-pos="h" width="80%"}
 
----
+------------------------------------------------------------------------
 
 ```{r}
 #| warning: false
@@ -1003,3 +993,18 @@ plt.title("Iris Dataset")
 plt.show()
 ```
 :::
+
+
+## Conclusion
+
+À travers les différents exercices présentés dans ce rapport, nous avons exploré la puissance et la pertinence des analyses statistiques dans l'interprétation des données. Chaque exercice nous a permis d'aborder un aspect unique et instructif des méthodes d'analyse :
+
+**Visualisation et Interprétation des Données** : La richesse des outils de visualisation que nous avons explorés dans ce rapport souligne leur importance dans l'analyse des données. Les graphiques de nuage de points nous ont aidés à comprendre les relations linéaires entre les variables. Les graphiques de densité ont fourni une perspective détaillée sur la distribution des données, révélant des tendances sous-jacentes. Les graphiques branche-feuille, quant à eux, ont offert une vue unique des données en soulignant leur structure. Les boxplots ont été particulièrement utiles pour identifier les valeurs médianes, les écarts et les éventuels valeurs aberrantes. Enfin, les histogrammes ont permis de visualiser la fréquence des données, donnant une vue d'ensemble de la distribution. Chacun de ces outils a joué un rôle crucial pour dépeindre les caractéristiques intrinsèques des ensembles de données examinés, montrant que la bonne visualisation est essentielle pour une interprétation précise et significative.
+
+**Études Botaniques** : En examinant les caractéristiques des iris, nous avons constaté l'importance de la visualisation des données pour distinguer et classifier différentes espèces basées sur des caractéristiques mesurables. Cette analyse a également mis en évidence la nécessité de prêter attention aux détails, car même si certaines espèces peuvent se chevaucher en termes de caractéristiques, des différences subtiles peuvent toujours être identifiées.
+
+**Outils de Visualisation** : Le rapport a mis l'accent sur l'utilisation efficace des outils de visualisation, tant dans R qu'en Python. En particulier, la capacité d'intégrer ces deux langages de programmation a montré comment les analystes peuvent tirer le meilleur parti des deux mondes pour obtenir des analyses plus approfondies et des visualisations plus riches.
+
+**Importance de l'Analyse Rigoureuse** : Chaque exercice a renforcé l'idée qu'une analyse rigoureuse, couplée à une bonne interprétation, peut conduire à des conclusions significatives et des insights précieux. Que ce soit en évaluant la corrélation entre les variables ou en distinguant les espèces d'iris, une méthodologie solide et des outils appropriés se sont avérés essentiels.
+
+En conclusion, ce rapport souligne la valeur des analyses statistiques dans divers domaines d'application. En utilisant une combinaison de compétences en statistiques, en visualisation et en programmation, nous pouvons dégager des tendances et des modèles pertinents à partir de grands ensembles de données. Alors que le monde génère de plus en plus de données chaque jour, la maîtrise de ces compétences devient d'autant plus essentielle pour naviguer dans ce paysage en constante évolution.
