@@ -1,0 +1,53 @@
+ 
+/* LaTeX-like CSS styles for HTML documents */
+
+body {
+    font-family: "Latin Modern", "Computer Modern", "Times New Roman", serif;
+    line-height: 1.5;
+    margin: 2em;
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+p, ul, ol {
+    margin-bottom: 1em;
+}
+
+code, pre {
+    font-family: "Courier New", monospace;
+}
+
+blockquote {
+    margin-left: 2em;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* If using MathJax or similar for equations, you might want to style them here too. */
+

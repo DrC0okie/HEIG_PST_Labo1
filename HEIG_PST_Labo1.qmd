@@ -1,5 +1,6 @@
 ---
-title: "HEIG_PST_Labo1"
+title: "Analyse exploratoire des données"
+subtitle: "De la théorie à la pratique (TP 1)"
 author: "Timothée Van Hove"
 format: html
 editor: visual
@@ -7,20 +8,56 @@ editor: visual
 
 ## Introduction
 
-Dans ce rapport, les questions et parties issues de la consigne fournir sont représentées par des citations.
+::: {.callout-note icon="false" collapse="false" appearance="simple"}
+## Note
+
+**Dans ce rapport, les questions et parties issues de la consigne fournie sont représentées par des "callouts" bleus.**
+
+**Le texte des questions est en gras**
+
+**La fin de la question principale est suivie d'une séparation**
+
+---
+
+La réponse est en format normal
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Questions imbriquées.
+
+**Si des questions sont posées de manière imbriquées, elles sont représentées par des *callouts* imbriqués**
+
+**Le texte de la question est toujours en gras, mais in n'y a pas de spéaration**
+
+La réponse est en format normal
+
+:::
+
+:::
 
 ## Exercice 1
 
-> a.  Les données se trouvent dans le répertoire data /data
-> b.  Charger les données dans R en utilisant les fonctions `scan()` et `read.table()`
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question a.
+
+**Les données se trouvent dans le répertoire data /data**
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question b.
+
+**Charger les données dans R en utilisant les fonctions `scan()` et `read.table()`**
 
 ```{r}
 cpus <- scan("data/cpus.txt")
 examen <- read.table("data/examen.txt", header = TRUE)
 
 ```
+:::
 
-> c.  Pour voir le contenu de l'objet cpus, taper l'instruction `cpus`
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question c.
+
+**Pour voir le contenu de l'objet cpus, taper l'instruction `cpus`**
 
 ```{r}
 cpus
@@ -29,38 +66,62 @@ cpus
 ```{r}
 examen
 ```
+:::
 
-> d.  Pour accéder à la 12ème composante du vecteur `cpus`, utiliser la commande
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d.
+
+**Pour accéder à la 12ème composante du vecteur `cpus`, utiliser la commande**
 
 ```{r}
 cpus[12]
 ```
+:::
 
-> e.  Pour obtenir une partie du vecteur `cpus` comme par exemple les éléments du vecteur compris entre la 3ème et la 19ème composante, taper l'instruction
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question e.
+
+**Pour obtenir une partie du vecteur `cpus` comme par exemple les éléments du vecteur compris entre la 3ème et la 19ème composante, taper l'instruction**
 
 ```{r}
 cpus[3:19]
 ```
+:::
 
-> f.  Pour extraire du vecteur `cpus` ses éléments supérieurs à 190, utiliser la commande
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question f.
+
+**Pour extraire du vecteur `cpus` ses éléments supérieurs à 190, utiliser la commande**
 
 ```{r}
 cpus[cpus>190]
 ```
+:::
 
-> g.  Il est possible d'accéder directement aux composantes d'une table par le nom. Par exemple, si on veut afficher la composante `note` de l'objet `examen`, on peut utiliser la commande
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question g.
+
+**Il est possible d'accéder directement aux composantes d'une table par le nom. Par exemple, si on veut afficher la composante `note` de l'objet `examen`, on peut utiliser la commande**
 
 ```{r}
 examen$note
 ```
+:::
 
-> h.  On peut aussi accéder en profondeur aux composantes comme par exemple par la commande
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question h.
+
+**On peut aussi accéder en profondeur aux composantes comme par exemple par la commande**
 
 ```{r}
 examen$note[7]
 ```
+:::
 
-> i.  La méthode la plus simple pour créer un vecteur consiste à énumérer ses éléments à l'aide de la fonction `c()` :
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question i.
+
+**La méthode la plus simple pour créer un vecteur consiste à énumérer ses éléments à l'aide de la fonction `c()` :**
 
 ```{r}
 mesdonnees<-c(2.9, 3.4, 3.4, 3.7, 3.7, 2.8, 2.1, 2.5, 2.6)
@@ -71,24 +132,36 @@ mesdonnees
 couleurs<-c("bleu", "vert", "blanc", "noir", "jaune")
 couleurs
 ```
+:::
 
-> j.  On peut ôter des composantes d'un vecteur en indiquant entre crochets les indices précédés du signe négatif comme par exemple
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question j.
+
+**On peut ôter des composantes d'un vecteur en indiquant entre crochets les indices précédés du signe négatif comme par exemple**
 
 ```{r}
 mesdonnees[-c(3:5)]
 ```
+:::
 
-> k.  Finalement, le contenu de votre environnement de travail est affiché à l'aide de la fonction `ls()`.
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question k.
+
+**Finalement, le contenu de votre environnement de travail est affiché à l'aide de la fonction `ls()`.**
 
 ```{r}
 ls()
 ```
+:::
 
 ## Exercice 2
 
-> La performance relative au processeur IBM 370/158-3 de 50 processeurs d'ordinateurs a été relevée. L'objet `cpus` contient les valeurs observées.
+La performance relative au processeur IBM 370/158-3 de 50 processeurs d'ordinateurs a été relevée. L'objet `cpus` contient les valeurs observées.
 
-> a.  Construire un diagramme branche-et-feuilles, un histogramme et une boîte à moustaches des données observées à l'aide des commandes ci-dessous.
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question a.
+
+**Construire un diagramme branche-et-feuilles, un histogramme et une boîte à moustaches des données observées à l'aide des commandes ci-dessous.**
 
 ```{r}
 stem(cpus)
@@ -103,9 +176,11 @@ rug(cpus)
 par(mfrow=c(1,1))
 ```
 
-**Questions**
+::: {.callout-note icon="false" appearance="minimal"}
 
-> 1.  Quels sont les effets de cette commande ?
+## Question a1.
+
+**Quels sont les effets de cette commande ?**
 
 `stem(cpus)` va produire un diagramme branche-et-feuilles des données contenues dans `cpus`.
 
@@ -115,19 +190,39 @@ par(mfrow=c(1,1))
 
 `boxplot(cpus, xlab="performance relative", col="darkslategray4", horizontal=T)` produit une boîte à moustaches (boxplot) des données. Le graphique est affiché horizontalement (grâce à `horizontal=T`).
 
-> 2.  Quel est l'effet de la fonction `rug()` ?
+:::
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Question a2.
+
+**Quel est l'effet de la fonction `rug()` ?**
 
 `rug(cpus)` ajoute de petites marques en bas de l'axe des x pour chaque donnée dans cpus. Cela permet de visualiser la densité des données le long de cet axe. En d'autres termes, elle montre où se trouvent les valeurs réelles dans le jeu de données.
 
 `par(mfrow=c(1,1))` réinitialise les paramètres graphiques pour afficher un seul graphique à la fois.
+:::
 
-> b.  Commenter la distribution des valeurs observées en se basant sur les graphiques de la Figure 1 : valeur(s) atypique(s), asymétrie.
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question b.
+
+**Commenter la distribution des valeurs observées en se basant sur les graphiques de la Figure 1 : valeur(s) atypique(s), asymétrie.**
+
+---
 
 Distribution: Nous pouvons observer sur l'histogramme une distribution asymétrique positive
 
 Valeurs atypiques: Nous pouvons observer sur le boxplot qu'il y a 4 valeurs atypiques: 185, 370, 510 et 915.
 
-> c.  Calculer la performance relative médiane et la performance relative moyenne des valeurs observées en utilisant les fonctions de R adéquates.
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question c.
+
+**Calculer la performance relative médiane et la performance relative moyenne des valeurs observées en utilisant les fonctions de R adéquates.**
+
+---
 
 Avec la fonction `median()` nous calculons la performance médiane:
 
@@ -145,70 +240,107 @@ performance_moyenne <- mean(cpus)
 print(paste("Performance relative moyenne:", performance_moyenne))
 ```
 
-> Est-il plus approprié d'utiliser la médiane ou la moyenne ?
+::: {.callout-note icon="false" appearance="minimal"}
+## Question c1.
+
+**Est-il plus approprié d'utiliser la médiane ou la moyenne ?**
 
 Etant donné que nous avons des valeurs atypiques qui sont nettement plus élevées que la majorité des autres valeurs, elles peuvent avoir un effet significatif sur la moyenne, la rendant plus élevée qu'elle ne le serait autrement. Dans ce cas, la médiane pourrait être une meilleure mesure de la tendance centrale pour cet ensemble de données.
 
-> d.  Déterminer le(s) mode(s) des valeurs observées à l'aide des commandes suivantes :
+:::
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d.
+
+**Déterminer le(s) mode(s) des valeurs observées à l'aide des commandes suivantes :**
 
 ```{r}
 n.cpus<-table(cpus)
 as.numeric(names(n.cpus)[n.cpus==max(n.cpus)])
 ```
 
+---
+
 La commande ci-dessus permet de déterminer la valeur ou les valeurs qui apparaissent le plus souvent, c'est-à-dire le mode ou les modes de l'ensemble de données.
 
 Les valeurs obtenues `24 36 66` indiquent que l'ensemble de données est multimodal. cela signifie qu'il a plusieurs "pics". Une distribution multimodale peut suggérer la présence de sous-groupes distincts.
+:::
 
-> e.  Que fait la commande suivante ?
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question e.
+
+**Que fait la commande suivante ?**
 
 ```{r}
 summary(cpus)
 ```
 
+---
+
 La commande `summary(cpus)` fournit un aperçu statistique basique de l'objet cpus. Pour un vecteur comme `cpus`, cela retourne :
 
--   **Minimum**: La plus petite valeur de l'ensemble de données.
--   **1st Qu.**: Le premier quartile. 25% des données sont inférieures ou égales à cette valeur.
--   **Median**: La médiane. 50% des données sont inférieures ou égales à cette valeur.
--   **Mean**: La moyenne arithmétique de l'ensemble de données.
--   **3rd Qu.**: Le troisième quartile. 75% des données sont inférieures ou égales à cette valeur.
--   **Maximum**: La plus grande valeur de l'ensemble de données.
+-   Minimum: La plus petite valeur de l'ensemble de données.
+-   1st Qu.: Le premier quartile. 25% des données sont inférieures ou égales à cette valeur.
+-   Median: La médiane. 50% des données sont inférieures ou égales à cette valeur.
+-   Mean: La moyenne arithmétique de l'ensemble de données.
+-   3rd Qu.: Le troisième quartile. 75% des données sont inférieures ou égales à cette valeur.
+-   Maximum: La plus grande valeur de l'ensemble de données.
 
-> f.  En effectuant aucun calcul, décrire l'effet sur la moyenne et sur la médiane des trois interventions suivantes :
->
->     1.  ajouter un processeur de performance relative 43;
->     2.  soustraire 9 à chaque valeur observée;
->     3.  diviser chaque observation par 3.
+:::
 
-1.  **Ajouter un processeur de performance relative 43** :
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question f.
 
-    -   **Moyenne** : Elle diminuera, mais étant donné que 43 est proche de la moyenne initiale de 86.88, l'effet sur la moyenne sera minimal.
+**En effectuant aucun calcul, décrire l'effet sur la moyenne et sur la médiane des trois interventions suivantes :**
 
-    -   **Médiane** : Étant donné que la médiane actuelle est de 42, l'ajout d'une valeur de 43 pourrait déplacer légèrement la médiane vers le haut, en fonction de la répartition exacte des données.
+::: {.callout-note icon="false" appearance="minimal"}
+## Question f1.
 
-2.  **Soustraire 9 à chaque valeur observée** :
+**ajouter un processeur de performance relative 43**
 
-    -   **Moyenne** : En soustrayant un nombre constant de chaque observation, la moyenne sera également réduite de ce même montant..
+Moyenne : Elle diminuera, mais étant donné que 43 est proche de la moyenne initiale de 86.88, l'effet sur la moyenne sera minimal.
 
-    -   **Médiane** : La médiane sera également réduite de 9, car chaque valeur est diminuée de ce montant.
+Médiane : Étant donné que la médiane actuelle est de 42, l'ajout d'une valeur de 43 pourrait déplacer légèrement la médiane vers le haut, en fonction de la répartition exacte des données.
 
-3.  **Diviser chaque observation par 3** :
+:::
 
-    -   **Moyenne** : Si chaque observation est divisée par un nombre constant, la moyenne sera également divisée par ce nombre.
+::: {.callout-note icon="false" appearance="minimal"}
+## Question f2.
 
-    -   **Médiane** : De même, la médiane sera divisée par 3.
+**soustraire 9 à chaque valeur observée**
 
-> g.  Calculer l'écart-type des performances relatives une fois avec les valeurs atypiques et une fois sans en utilisant la fonction sd(). Les valeurs atypiques peuvent être déterminées à l'aide de la fonction `boxplot()` avec `plot=FALSE` comme argument.
+Moyenne : En soustrayant un nombre constant de chaque observation, la moyenne sera également réduite de ce même montant..
 
-1.  **Avec toutes les valeurs (incluant les atypiques) :**
+Médiane : La médiane sera également réduite de 9, car chaque valeur est diminuée de ce montant.
+:::
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Question f3.
+
+**diviser chaque observation par 3.**
+
+Moyenne : Si chaque observation est divisée par un nombre constant, la moyenne sera également divisée par ce nombre.
+
+Médiane : De même, la médiane sera divisée par 3.
+:::
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question g.
+
+**Calculer l'écart-type des performances relatives une fois avec les valeurs atypiques et une fois sans en utilisant la fonction sd(). Les valeurs atypiques peuvent être déterminées à l'aide de la fonction `boxplot()` avec `plot=FALSE` comme argument.**
+
+---
+
+Avec toutes les valeurs (incluant les atypiques) :
 
 ```{r}
 ecart_type_complet <- sd(cpus)
 print(paste("Ecart type complet:", ecart_type_complet))
 ```
 
-2.  **Sans les valeurs atypiques :**
+Sans les valeurs atypiques :
 
 D'abord, identifions les valeurs atypiques avec la fonction `boxplot()` :
 
@@ -231,15 +363,24 @@ Enfin, calculons l'écart-type pour cet ensemble sans les valeurs atypiques :
 print(paste("Ecart type sans valeurs atypiques:", sd(cpus_sans_atypiques)))
 ```
 
-> Que constate-t-on ? L'écart-type est-il un indicateur robuste ?
+::: {.callout-note icon="false" appearance="minimal"}
+## Question g1.
+
+**Que constate-t-on ? L'écart-type est-il un indicateur robuste ?**
 
 Les valeurs atypiques ont un effet majeur sur l'écart-type, ce qui souligne la sensibilité de cet indicateur aux valeurs extrêmes. Une petite quantité de valeurs atypiques peut fausser la mesure de la dispersion, rendant l'écart-type beaucoup plus élevé qu'il ne le serait autrement. L'écart-type n'est pas un indicateur robuste en présence de valeurs atypiques, car il ne résiste pas bien à ces perturbations.
 
+:::
+:::
+
 ## Exercice 3
 
-> Les étudiants suivant un cours de Probabilités et Statistique dans une école d'ingénierie ont passé l'examen de fin d'unité. Le cours était donné par le même professeur à étudiants répartis en deux groupes notés A et B. Les résultats obtenus sont contenus dans l'objet `examen`. On se demande si une différence significative existe entre les deux groupes à l'examen.
+Les étudiants suivant un cours de Probabilités et Statistique dans une école d'ingénierie ont passé l'examen de fin d'unité. Le cours était donné par le même professeur à étudiants répartis en deux groupes notés A et B. Les résultats obtenus sont contenus dans l'objet `examen`. On se demande si une différence significative existe entre les deux groupes à l'examen.
 
-> a.  Tracer les boîtes à moustaches en parallèle en utilisant les commandes suivantes :
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question a.
+
+**Tracer les boîtes à moustaches en parallèle en utilisant les commandes suivantes :**
 
 ```{r}
 lblue<-"#528B8B"
@@ -249,7 +390,14 @@ boxplot(note~groupe, data=examen, ylim=c(1,6), xlab="groupe",
 abline(h=4, lty=2)
 ```
 
-> b.  Rajouter les bâtonnets des notes des étudiants des deux classes, sur le côté gauche des boîtes à moustaches pour la classe (side=2 comme argument de la fonction rug()) et sur le côté droite pour la classe (side=4 comme argument de la fonction rug()).
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question b.
+
+**Rajouter les bâtonnets des notes des étudiants des deux classes, sur le côté gauche des boîtes à moustaches pour la classe (side=2 comme argument de la fonction rug()) et sur le côté droite pour la classe (side=4 comme argument de la fonction rug()).**
+
+---
 
 Rajout des bâtonnets:
 
@@ -273,20 +421,585 @@ rug(note.B, side=4)
 
 ```
 
-> c.  En se basant sur la Figure 2, existe-t-il une différence significative entre les deux groupes à l'examen de fin d'unité ?
+:::
 
-> d.  Observe-t-on sur les boîtes à moustaches une différence entre les dispersions des deux groupes ?
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question c.
 
-> e.  Calculer les écarts-types des deux groupes à l'aide des fonctions `by()` et `sd()`.
+**En se basant sur la Figure 2, existe-t-il une différence significative entre les deux groupes à l'examen de fin d'unité ?**
 
-> En se basant sur les écarts-types, existe-t-il une différence en dispersion entre les deux groupes à l'examen de fin d'unité ?
+---
 
-> f.  Que peut-on déduire en comparant les conclusions établies en c., d. et e. ?
+Oui il existe une différence significative. Nous pouvons observer que l'étendue inter-quartile du groupe A et du groupe B ne se superpose (presque) pas, donc que nous avons 2 distributions séparées. Nous avons 75% des élèves du groupe B qui ont une meilleure note, ou une note équivalente que les 25% meilleurs élèves du groupe A.
 
-> g.  Un autre graphique pour étudier les éventuelles différences entre les deux groupes à l'examen de fin d'unité se trouve dans la Figure 3.
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d.
+
+**Observe-t-on sur les boîtes à moustaches une différence entre les dispersions des deux groupes ?**
+
+---
+
+Nous pouvons observer que l'étendue et l'étendue inter-quartile du groupe A est plus "grande" que celle du groupe B. Cela signifie que les notes du groupe A ont une plus grande dispersion.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question e.
+
+**Calculer les écarts-types des deux groupes à l'aide des fonctions `by()` et `sd()`.**
+
+```{r}
+result <- by(examen$note, examen$groupe, sd)
+print(paste("Ecart type groupe A:", round(result['A'], 3)))
+print(paste("Ecart type groupe B:", round(result['B'], 3)))
+```
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Question e1.
+
+**En se basant sur les écarts-types, existe-t-il une différence en dispersion entre les deux groupes à l'examen de fin d'unité ?**
+
+Oui. Le groupe A a un écart-type légèrement plus élevé que le groupe B, ce qui signifie que les scores du groupe A sont légèrement plus dispersés autour de leur moyenne que ceux du groupe B.
+
+:::
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question f.
+
+**Que peut-on déduire en comparant les conclusions établies en c., d. et e. ?**
+
+---
+
+Comparaison des centres : La médiane du groupe B est supérieure à celle du groupe A, ce qui indique que le centre de la distribution des notes pour le groupe B est plus élevé que pour le groupe A.
+
+Comparaison de la dispersion avec l'écrat-type : Les notes du groupe A sont légèrement plus dispersées que celles du groupe B, comme indiqué par un écart-type légèrement plus élevé.
+
+Comparaison de la dispersion avec Étendue interquartile : L'IQR du groupe A est plus grand que celui du groupe B, ce qui suggère que la majorité (50%) des notes du groupe A sont légèrement plus dispersées que celles du groupe B.
+
+Comparaison des étendues : Les notes du groupe B vont de plus faibles à plus élevées que celles du groupe A. Il est particulièrement intéressant de noter que le minimum du groupe B (3.200) est supérieur au 1er quartile du groupe A (3.075), ce qui indique une différence notable dans la distribution des scores.
+
+**Conclusion** : Les élèves du groupe B ont généralement obtenu de meilleures notes que ceux du groupe A, comme le montre la médiane. Bien que les notes du groupe A soient légèrement plus dispersées que celles du groupe B, la dispersion dans le groupe A est en réalité assez comparable à celle du groupe B. Le fait que les boîtes à moustaches ne se chevauchent (presque) pas, est également un indicateur fort d'une différence notable entre les groupes.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question g.
+
+ **Un autre graphique pour étudier les éventuelles différences entre les deux groupes à l'examen de fin d'unité se trouve dans la Figure 3. À votre avis, entre les boîtes à moustaches en parallèle et le graphique tracé ci-dessus, lequel est le plus approprié ?**
+
+---
+
+Les 2 graphes ne sont pas utilisés dans le même objectif:
+
+
+**Boites à moustache**
+
+Si le principal intérêt est de comparer rapidement la médiane, la dispersion ou d'identifier des valeurs aberrantes entre deux groupes, un boxplot peut être plus approprié. Avantages:
+
+-   Donne un résumé rapide des cinq nombres de synthèse
+-   Identifie facilement les valeurs aberrantes.
+-   Compare rapidement la dispersion et la médiane entre plusieurs groupes.
+
+**Diagramme de densité**
+
+Si le principal intérêt est de comparer la visualisation de la forme de la distribution des données, en particulier si on soupçonne des particularités comme la bimodalité, un diagramme de densité est plus approprié. Avantages:
+
+-   Montre la distribution complète des données, y compris sa forme.
+-   Identifie les modes ou les irrégularités dans la distribution.
+
+**Conclusion**
+
+Pour obtenir un maximum d'informations il serait judicieux d'utiliser à la fois le boxplot et le Diagramme de densité
+
+:::
 
 ## Exercice 4
 
+Une partie de la base de données du recensement américain de 1994 a été extraite. Elle concerne 48'842 personnes adultes dont on s'intéresse notamment à l'influence que peut avoir le type de scolarité, formation acquise par l'individu, sur le nombre d'heures de travail par semaine. Par simplicité et pour préserver l'authenticité du système éducatif américain, le nom des variables n'est pas traduit en français.
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question a.
+
+**Nous nous proposons de tracer les boîtes à moustaches en parallèle du temps consacré au travail par les individus recensés. Pour y parvenir, nous utilisons la librairie ggplot2 qu'il faut d'abord installer puis activer dans votre session.**
+
+**La librairie ggplot2 explicite les liens conceptuels entre graphiques et analyses statistiques. Sa syntaxe est particulière mais ingénieuse. Elle se base sur un ensemble de composants indépendants qui peuvent être combinés de différentes manières7.**
+
+**Les données du recensement se trouvent dans la librairie arules de R qui doit être installée puis activée.**
+
+**Les observations sont lues dans le logiciel à l'aide de la commande**
+
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+library(arules)
+library(ggplot2)
+```
+
+```{r}
+data("AdultUCI")
+```
+
+**et les variables qui nous intéressent sont sélectionnées et stockées dans l'objet dframe par les commandes**
+
+```{r}
+dframe<-AdultUCI[, c("education", "hours-per-week")]
+colnames(dframe)<-c("education", "hours_per_week")
+str(dframe)
+```
+
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Question a1.
+
+**Pourquoi ce changement de nom de variable ?**
+
+---
+
+On renomme "hours-per-week" en "hours_per_week". car le caractère `-` peut être interprété comme un opérateur de soustraction mathématique.
+
+:::
+
+::: {.callout-note icon="false" appearance="minimal"}
+## Question a2.
+
+**Tracer les boîtes à moustaches en parallèle de la Figure 4 dans lesquelles est représenté le temps hebdomadaire consacré au travail par les Américains recensés selon leur formation. et commenter le graphique obtenu**
+
+```{r}
+ggplot(dframe, aes(x=hours_per_week, y=education)) + 
+  geom_point(colour="lightblue", alpha=0.1, position="jitter") + 
+  geom_boxplot(outlier.size=0, alpha=0.2)
+```
+
+---
+
+Le graphique permet de comparer la distribution des heures travaillées par semaine entre différents niveaux d'éducation. Il peut aider à identifier s'il existe des tendances ou des différences dans le nombre d'heures travaillées en fonction du niveau d'éducation.
+
+*Boxplots* : Pour chaque niveau d'éducation, il y a un boxplot qui montre les heures travaillées par semaine. Si les boîtes sont larges, cela indique une grande variabilité dans les heures travaillées. Si elles sont étroites, cela indique une faible variabilité.
+
+*Scatter plot* : Les points bleus montrent des observations individuelles. Grâce à l'option `position="jitter"`.
+
+:::
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question b.
+
+**Calculer la proportion d'observations contenant des valeurs manquantes en utilisant les commandes ci-dessous.**
+
+```{r}
+dim(AdultUCI)
+nrows<-nrow(AdultUCI)
+n.missing<-rowSums(is.na(AdultUCI))
+sum(n.missing>0)/nrows
+```
+
+---
+
+`dim(AdultUCI)` donne les dimensions du dataframe AdultUCI. `48842 15` indique que le dataframe contient 48,842 lignes (observations) et 15 colonnes (variables).
+
+`nrows<-nrow(AdultUCI)` extrait le nombre de lignes du dataframe et le stocke dans la variable nrows.
+
+`n.missing<-rowSums(is.na(AdultUCI))` : is.na(AdultUCI) renvoie une matrice de la même taille que AdultUCI avec des valeurs TRUE là où les éléments sont manquants (NA) et FALSE ailleurs. `rowSums()` somme les valeurs TRUE (considérées comme 1) par ligne. Le résultat est donc un vecteur où chaque élément est le nombre de valeurs manquantes pour la ligne correspondante. La variable `n.missing` contient donc le nombre de valeurs manquantes pour chaque observation du dataframe.
+
+`sum(n.missing>0)/nrows` : n.missing\>0 renvoie un vecteur logique de la même longueur que n.missing, avec des valeurs TRUE là où le nombre de valeurs manquantes est supérieur à 0, et FALSE ailleurs. `sum(n.missing>0)` compte combien d'observations ont au moins une valeur manquante. Diviser ce nombre par nrows donne la proportion d'observations ayant au moins une valeur manquante.
+
+Le résultat `0.3824577` indique qu'environ 38.25% des observations dans le dataframe ont au moins une valeur manquante.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question c.
+
+**En se basant sur les boîtes à moustaches en parallèle de la Figure 4, pour quel type de formation observe-t-on la plus grande dispersion du temps de travail ? Existe-t-il une différence entre les médianes des types de formation ? En donner brièvement la raison.**
+
+---
+
+En examinant la largeur des boîtes (IQR) dans les boxplots, nous pouvons voir que le groupe de personnes ayant un niveau de formation `11th` a la plus grande dispersion de temps de travail.
+
+En examinant les valeurs médianes, nous voyons clairement que, globalement, la médiane des heures travaillées par semaine est similaire pour tous les niveaux d'éducation, sauf pour les niveaux `Doctorate` et `Prof-school`.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d.
+
+**Pour chaque type de formation, on peut déterminer puis afficher à l'écran le temps maximal de travail hebdomadaire à l'aide des commandes**
+
+```{r}
+nx<-by(dframe$hours_per_week, dframe$education, max, na.rm=T)
+nx
+```
+
+**La formation pour laquelle un temps maximal a été observé se détermine par les commandes**
+
+```{r}
+max(nx)
+names(nx)[nx==max(nx)]
+```
+
+---
+
+Pour la majorité des niveaux d'éducation, la valeur maximale de "hours_per_week" est de 99 heures. Il y a 14 niveaux d'éducation pour lesquels certaines personnes ont déclaré travailler 99 heures par semaine.Les seuls niveaux d'éducation où personne n'a déclaré travailler 99 heures par semaine sont "Preschool" et "1st-4th", où les valeurs maximales sont respectivement de 75 et 96 heures.
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d1.
+
+**Est-ce surprenant?**
+
+---
+
+Oui, cela parrait surprenant. Une semaine compte 168 heures. Si quelqu'un déclare travailler 99 heures par semaine, cela laisse moins de 70 heures pour toutes les autres activités, y compris dormir, manger, les loisirs, etc. Cela peut indiquer une surcharge de travail extrême ou peut-être des erreurs dans les données.
+
+De plus, voir cette valeur maximale sur une large gamme de niveaux d'éducation, du "5th-6th" grade au "Doctorate", suggère que ce n'est pas spécifique à un certain niveau d'éducation. Cela pourrait indiquer une tendance générale ou une particularité dans la manière dont les données ont été collectées ou rapportées.
+
+:::
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question e.
+
+**En s'inspirant des commandes utilisées ci-dessus, déterminer la formation pour laquelle la distribution des temps de travail se caractérise par le plus petit écart-type.**
+
+---
+
+```{r}
+# Calculer l'écart-type pour chaque niveau d'éducation
+std_devs <- by(dframe$hours_per_week, dframe$education, sd, na.rm=T)
+
+# Afficher les écarts-types
+print(std_devs)
+
+# Trouver la formation avec le plus petit écart-type
+min_std_dev <- min(std_devs, na.rm=T)
+education_min_std_dev <- names(std_devs)[std_devs == min_std_dev]
+
+print(paste("La formation avec le plus petit écart-type est:", education_min_std_dev, "avec un écart-type de:", round(min_std_dev, 3)))
+
+```
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question f.
+
+**Observe-t-on un résultat similaire en utilisant l'étendue interquartiles à l'aide de la fonction `IQR()`?**
+
+---
+
+```{r}
+# Calculer l'IQR pour chaque niveau d'éducation
+iqr_values <- by(dframe$hours_per_week, dframe$education, IQR, na.rm=T)
+
+# Afficher les valeurs de l'IQR
+print(iqr_values)
+
+# Trouver la formation avec le plus petit IQR
+min_iqr <- min(iqr_values, na.rm=T)
+education_min_iqr <- names(iqr_values)[iqr_values == min_iqr]
+
+print(paste("La formation avec la plus petite étendue interquartile est:", education_min_iqr, "avec un IQR de:", round(min_iqr, 3)))
+
+```
+
+Non, nous n'avons pas les meme résultats: l'équart type et l'IQR n'identifient pas la meme formation. Cela signifie que ce niveau d'éducation a des valeurs extrêmes ou atypiques qui influencent l'écart-type mais pas l'IQR:
+
+Ici le graphique comparatif de ces deux formations "5th-6th" et "Assoc-voc" :
+
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+# Filtrer le dataframe pour ne conserver que les formations "5th-6th" et "Assoc-voc"
+subset_dframe <- dframe %>% filter(education %in% c("5th-6th", "Assoc-voc"))
+
+# Créer le graphique
+ggplot(subset_dframe, aes(x=hours_per_week, y=education)) + 
+  geom_point(colour="lightblue", alpha=0.3, position="jitter") + 
+  geom_boxplot(outlier.size=0, alpha=0.5)
+
+```
+
+Nous pouvons observer sur le graphique ci-dessus que la formation "Assoc-voc" présente une dispersion plus grande des données autour de la moyenne que la formation "5th-6th".
+
+La formation "5th-6th" présente une dispersion très faible, en particulier dans la moitié centrale des données. de plus, elle a des valeurs extrêmes qui sont relativement symétriques.
+
+:::
+
 ## Exercice 5
 
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question exercice 5
+
+**Estimer et justifier les valeurs des coefficients de corrélation des séries de données à l'aide de leurs graphiques de nuage de points tracés dans la @fig-scatterplot1, la @fig-scatterplot2, la @fig-scatterplot3 et la @fig-scatterplot1**
+
+---
+
+![Graphiques de nuage de points I.](figures/scatterplot5.png){#fig-scatterplot1 fig-align="center" width="80%"}
+
+Les points s'alignent clairement le long d'une ligne ascendante. Bien que l'alignement ne soit pas parfaitement sur une ligne diagonale de pente 1 (ce qui indiquerait un coefficient de corrélation de 1), il s'en rapproche. Je l'estime à environ 0,9, reflétant une corrélation positive très forte, mais pas parfaite.
+
+![Graphiques de nuage de points II.](figures/scatterplot6.png){#fig-scatterplot2 fig-align="center" width="80%"}
+
+Les points sont dispersés de manière erratique sans suivre une tendance linéaire claire ni dans une direction positive ni dans une direction négative. Cette dispersion suggère l'absence d'une relation linéaire significative entre les deux variables. En d'autres termes, il est difficile de prédire la valeur de l'une des variables en se basant sur l'autre. D'après cette observation visuelle, je dirais que le coefficient de corrélation est très proche de 0, signifiant qu'il n'y a pas de corrélation linéaire entre ces deux variables.
+
+![Graphiques de nuage de points III.](figures/scatterplot7.png){#fig-scatterplot3 fig-align="center" width="80%"}
+
+Les points semblent suivre une tendance parabolique qui ressemble à la courbe $f(x) = x^2$. Cela indique une relation non linéaire claire entre les deux variables. Par conséquent, le coefficient de corrélation linéaire pourrait être proche de 0, ce qui peut être trompeur. En réalité, cela ne signifie pas l'absence de relation, mais plutôt l'absence de relation linéaire.
+
+![Graphiques de nuage de points IV.](figures/scatterplot8.png){#fig-scatterplot4 fig-align="center" width="80%"}
+
+Les points semblent suivre une tendance linéaire descendante claire. Cette distribution suggère une forte corrélation négative entre les deux variables. D'après la proximité des points à une droite descendante, j'estimerais que le coefficient de corrélation à environ -0.9. Cela signifie qu'une augmentation d'une variable est associée à une diminution proportionnelle de l'autre variable, et vice versa.
+
+:::
+
 ## Exercice 6
+
+Une étude a été réalisée en botanique sur $150$ iris. Cinq variables ont été relevées : la longueur (`Sepal.Length`) et la largeur (`Sepal.Width`) des sépales, la longueur (`Petal.Length`) et la largeur (`Petal.Width`) des pétales, l'unité utilisée étant le centimètre, ainsi que l'espèce (`Species`) de la fleur (Setosa, Versicolor et Virginica).
+
+![Les trois espèces d'iris.](iris.png){#fig-iris-species fig-pos="h" width="50%"}
+
+Ces données, qui avaient été récoltées par Edgar Anderson, se trouvent déjà dans ***R***. Pour les utiliser dans votre session actuelle, il suffit de taper dans la console le nom de l'objet, `iris`, qui les contient.
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question a.
+
+**Tracer le nuage de points de la largeur (`Petal.Width`) versus la longueur (`Petal.Length`) des pétales des iris en utilisant les librairies `ggplot2` et `ggforce`.**
+
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+library(ggplot2)
+library(ggforce)
+```
+
+```{r}
+#| label: fig-iris
+#| fig-cap: Graphique de nuage de points des iris
+#| warning: false
+#| message: false
+
+pCol <- c('#057076', '#ff8301', '#bf5ccb')
+
+plot.iris<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, col=Species)) +
+scale_color_manual(values=pCol) +
+scale_x_continuous(breaks=seq(0.5, 7.5, by=1), limits=c(0.5, 7.5)) +
+scale_y_continuous(breaks=seq(-0.5, 3, by=0.5), limits=c(-0.5, 3)) + 
+labs(title="Edgar Anderson's Iris Data",
+x="Petal Length", 
+y="Petal Width") +
+theme(plot.title=element_text(size=12, hjust=.5),
+axis.title=element_text(size=10, vjust=-2),
+axis.text=element_text(size=10, vjust=-2)) +
+geom_point(aes(color=Species), alpha=.6, size=3) +
+theme_minimal()
+
+plot.iris +
+ggforce::geom_mark_ellipse(
+    aes(fill=Species, label=Species), 
+    alpha=.15, show.legend=FALSE
+) 
+```
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question b.
+
+**En se basant sur le graphique de nuage de points, existe-t-il une relation entre la largeur et la longueur des pétales des iris ? Dans l'affirmative, de quelle nature est-elle ?**
+
+---
+
+Il y a une relation positive entre la longueur et la largeur des pétales dans l'ensemble de données iris. Lorsque la longueur du pétale augmente, sa largeur augmente aussi, et vice versa. Cette relation est linéaire et positive.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question c.
+
+**Remarque-t-on des observations inhabituelles dans le graphique de nuage de points ?**
+
+---
+      
+Setosa : Ces iris sont bien séparés des deux autres espèces en ce qui concerne la longueur et la largeur des pétales. Ils ont tendance à avoir des pétales plus petits, à la fois en longueur et en largeur.
+
+Versicolor et Virginica : Ces deux espèces peuvent se chevaucher en termes de longueur et de largeur des pétales, mais elles présentent également certaines différences. Les virginica ont généralement des pétales plus grands que les versicolor.
+
+Il n'y a pas d'observations notoirement "anormales" ou "outliers" dans cet ensemble de données. Cependant, il y a des points qui peuvent être plus éloignés de la majorité de leur groupe, en particulier parmi les versicolor et les virginica. Ces points ne sont pas nécessairement des erreurs, mais ils peuvent être des individus qui présentent des variations naturelles par rapport à la majorité de leur espèce.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question d.
+
+**Déterminer la corrélation entre la largeur et la longueur des pétales des iris en utilisant la fonction `cor()`.**
+
+---
+
+```{r}
+correlation <- cor(iris$Petal.Length, iris$Petal.Width)
+print(correlation)
+```
+
+Nous voyons bien une corrélation positive forte entre les deux variables, indépendamment de l'espèce.
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question e.
+
+**Quelle valeur attribueriez-vous à la longueur des pétales des iris pour distinguer les iris Setosa des deux autres espèces ?**
+
+---
+
+Nous pouvons créer un graphique incluant des boxplots et un graphique de densité. Cela nous permet de visualiser au mieux la répartition en fonction de la longueur des pétales:
+
+```{r}
+library(ggplot2)
+library(gridExtra)
+
+# Boxplot horizontal avec rug
+p1 <- ggplot(iris, aes(y=Species, x=Petal.Length, fill=Species)) +
+  geom_boxplot() + 
+  geom_rug(sides="b") + 
+  labs(title="Boxplot of Iris Petal Length", x="Petal Length [cm]") + 
+  theme_minimal() +
+  theme(legend.position="none",
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.margin=margin(5.5, 5.5, 5.5, 5.5, "pt")) +
+  scale_x_continuous(limits=c(0.5, 7.5))
+
+# Diagramme de densité
+p2 <- ggplot(iris, aes(x=Petal.Length, fill=Species)) +
+  geom_density(alpha=0.7) + 
+  labs(title="Density Plot of Iris Petal Length", x="Petal Length [cm]", y="Density") +
+  theme_minimal() +
+  theme(legend.position="bottom",
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        plot.margin=margin(5.5, 5.5, 5.5, 5.5, "pt")) +
+  scale_x_continuous(limits=c(0.5, 7.5))
+
+# Affichage des deux graphiques l'un au-dessus de l'autre
+grid.arrange(p1, p2, ncol=1)
+
+
+
+```
+
+Sur le graphique ci-dessus, nous pouvons voir que la longueur des pétales de Setosa est complètement distincte des deux autres espèces. Comme ces deux espèces n'ont pas beaoucoup de valeurs extremes, nous pouvons prendre la valeur moyenne de l'écart entre la valeur maximum de la longueur des pétales de Setosa et la valeur minimum de la longueur des pétales de Versicolor:\
+
+```{r}
+# Extraire la valeur max de la longueur des pétales de Setosa
+setosa_max <- max(iris$Petal.Length[iris$Species == "setosa"])
+
+# Extraire la valeur min de la longueur des pétales de Versicolor
+versicolor_min <- min(iris$Petal.Length[iris$Species == "versicolor"])
+
+# Calculer la valeur moyenne de l'écart
+mean_value <- (setosa_max + versicolor_min) / 2
+mean_value
+
+```
+
+La valeur de 2.45 peut donc bien distinguer ces deux espèces
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question f.
+
+**Des animations peuvent être créées dans R en utilisant la librairie `gganimate`. Un exemple peut être conçu en utilisant le code ci-dessous.**
+
+```{r}
+#| eval: false
+#| label: fig-iris-animation
+#| fig-cap: Graphique de nuage de points anime des iris
+#| warning: false
+#| message: false
+
+library(gganimate)
+
+anim<-plot.iris+ 
+  transition_states(Species,
+                    transition_length = 2,
+                    state_length = 1)
+
+anim
+
+anim + 
+  enter_fade() + 
+  exit_shrink() + 
+  ggtitle('Now showing {closest_state}',
+        subtitle = 'Frame {frame} of {nframes}')
+```
+
+:::
+
+::: {.callout-note icon="false" collapse="true" appearance="simple"}
+## Question g.
+
+**(En option bonus) Installer la librairie `reticulate` qui permet de faire du Python à partir de RStudio IDE. Fixer ensuite l'interpréteur Python dans la rubrique *Python* de la boîte de dialogue Options. Cette boîte de dialogue s'affiche à l'écran en utilisant le menu Tools puis Global Options... de RStudio IDE**.
+
+<br>
+
+![L'interpréteur Python de ***RStudio IDE***.](figures/Python_interpreter.png){width="80%"}
+
+<br>
+
+La lecture de l'objet `iris` de ***R*** en Python s'effectue en utilisant la commande
+
+```{python}
+#| message: false
+iris_py = r.iris
+```
+
+**Reconstituer le graphique ci-dessous en utilisant en particulier les librairies `pandas`, `numpy` et le module `matplotlib.pyplot` de la bibliothèque `matplotlib` de Python.**
+
+![Graphique de nuage de points des iris](figures/nuage_points_iris.png){#fig-iris-species-python fig-pos="h" width="80%"}
+
+---
+
+```{r}
+#| warning: false
+#| message: false
+library(reticulate)
+```
+
+```{python}
+# Importation des bibliothèques nécessaires
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Récupération du jeu de données Iris
+iris_py = r.iris
+
+# Définition des couleurs pour chaque espèce d'Iris
+colors = {'setosa': 'red', 'versicolor': 'green', 'virginica': 'blue'}
+
+# Création d'un nuage de points (scatter plot) pour le jeu de données Iris
+# Les couleurs sont attribuées selon l'espèce de chaque point
+iris_py.plot.scatter(x='Petal.Length', y='Petal.Width', c=iris_py["Species"].map(colors))
+
+# Définition des labels pour les axes x et y
+plt.xlabel("petal length (cm)")
+plt.ylabel("petal width (cm)")
+
+# Définition du titre du graphique
+plt.title("Iris Dataset")
+
+# Affichage du graphique
+plt.show()
+```
+:::
