@@ -74,10 +74,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
+  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
+  <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
+  <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
+  <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
+  <li><a href="#exercice-6" id="toc-exercice-6" class="nav-link" data-scroll-target="#exercice-6">Exercice 6</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -97,6 +114,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">This version: October 22, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -146,7 +169,7 @@ Questions imbriquées.
 </section>
 <section id="exercice-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-1">Exercice 1</h2>
-<p>L’une des forces de <strong><em>R</em></strong> est qu’il est capable de traiter de grands jeux de données de manière très rapide. Cet avantage a évidemment son prix : la lecture des données peut paraître ennuyeuse, particulièrement lorsqu’elles se trouvent sur support informatique. Il existe cependant plusieurs possibilités pour lire dans <strong><em>R</em></strong> des données contenues dans un fichier. Si elles se présentent sous la forme d’une liste de valeurs telles que chacune d’elles figure sur une ligne ou si elles sont séparées par un espace, on peut utiliser la commande <code>scan()</code> qui renvoie un vecteur. Lorsque les données se présentent sous la forme d’une table, i.e.&nbsp;une ligne par observation et une colonne par variable, l’instruction à utiliser est <code>read.table()</code> si les données se trouvent dans un fichier texte (ASCII). Des variantes de cette fonction existent comme par exemple <code>read.csv2()</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Dans cet exercice, nous allons enregistrer dans <strong><em>R</em></strong> les données qui seront utilisées dans le travail pratique. Vous pouvez organiser comme vous le souhaitez votre travail. Néanmoins, nous vous suggérons de créer deux répertoires : l’un contenant les données et l’autre votre travail (script, rapport, résultats). Pour être plus structuré, vous pouvez même ajouter un sous-répertoire à votre répertoire de travail pour y stocker vos graphiques; vous pouvez également créer un projet pour mieux gérer votre travail pratique.</p>
+<p>L’une des forces de <strong><em>R</em></strong> est qu’il est capable de traiter de grands jeux de données de manière très rapide. Cet avantage a évidemment son prix : la lecture des données peut paraître ennuyeuse, particulièrement lorsqu’elles se trouvent sur support informatique. Il existe cependant plusieurs possibilités pour lire dans <strong><em>R</em></strong> des données contenues dans un fichier. Si elles se présentent sous la forme d’une liste de valeurs telles que chacune d’elles figure sur une ligne ou si elles sont séparées par un espace, on peut utiliser la commande <code>scan()</code> qui renvoie un vecteur. Lorsque les données se présentent sous la forme d’une table, i.e.&nbsp;une ligne par observation et une colonne par variable, l’instruction à utiliser est <code>read.table()</code> si les données se trouvent dans un fichier texte (ASCII). Des variantes de cette fonction existent comme par exemple <code>read.csv2()</code> [^4]. Dans cet exercice, nous allons enregistrer dans <strong><em>R</em></strong> les données qui seront utilisées dans le travail pratique. Vous pouvez organiser comme vous le souhaitez votre travail. Néanmoins, nous vous suggérons de créer deux répertoires : l’un contenant les données et l’autre votre travail (script, rapport, résultats). Pour être plus structuré, vous pouvez même ajouter un sous-répertoire à votre répertoire de travail pour y stocker vos graphiques; vous pouvez également créer un projet pour mieux gérer votre travail pratique.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -177,8 +200,8 @@ Question b.
 <div class="callout-body-container callout-body">
 <p><strong>Charger les données dans R en utilisant les fonctions <code>scan()</code> et <code>read.table()</code></strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cpus <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"data/cpus.txt"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>examen <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/examen.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>cpus <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="st">"data/cpus.txt"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>examen <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/examen.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -197,7 +220,7 @@ Question c.
 <div class="callout-body-container callout-body">
 <p><strong>Pour voir le contenu de l’objet cpus, taper l’instruction <code>cpus</code></strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cpus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>cpus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  46 110  38  22  11 510  38  76  21  92  44  66  24  10  25 915  26  56  40
 [20]   7 185 141  14  24  19  24  32  33 370  58  12  66  62  12  45 133  64 144
@@ -205,7 +228,7 @@ Question c.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>examen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>examen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   groupe note
 1       A  3.5
@@ -259,7 +282,7 @@ Question d.
 <div class="callout-body-container callout-body">
 <p><strong>Pour accéder à la 12ème composante du vecteur <code>cpus</code>, utiliser la commande</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cpus[<span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>cpus[<span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 66</code></pre>
 </div>
@@ -281,7 +304,7 @@ Question e.
 <div class="callout-body-container callout-body">
 <p><strong>Pour obtenir une partie du vecteur <code>cpus</code> comme par exemple les éléments du vecteur compris entre la 3ème et la 19ème composante, taper l’instruction</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpus[<span class="dv">3</span><span class="sc">:</span><span class="dv">19</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>cpus[<span class="dv">3</span><span class="sc">:</span><span class="dv">19</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  38  22  11 510  38  76  21  92  44  66  24  10  25 915  26  56  40</code></pre>
 </div>
@@ -303,7 +326,7 @@ Question f.
 <div class="callout-body-container callout-body">
 <p><strong>Pour extraire du vecteur <code>cpus</code> ses éléments supérieurs à 190, utiliser la commande</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cpus[cpus<span class="sc">&gt;</span><span class="dv">190</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>cpus[cpus<span class="sc">&gt;</span><span class="dv">190</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 510 915 370</code></pre>
 </div>
@@ -325,7 +348,7 @@ Question g.
 <div class="callout-body-container callout-body">
 <p><strong>Il est possible d’accéder directement aux composantes d’une table par le nom. Par exemple, si on veut afficher la composante <code>note</code> de l’objet <code>examen</code>, on peut utiliser la commande</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>examen<span class="sc">$</span>note</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>examen<span class="sc">$</span>note</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 3.5 3.0 2.0 3.8 2.0 1.9 4.4 3.5 4.3 4.0 3.8 3.9 2.2 3.4 4.2 3.3 4.0 4.5 4.3
 [20] 5.6 5.9 3.9 4.0 4.5 5.4 4.4 4.7 4.6 3.8 4.3 3.8 3.2</code></pre>
@@ -348,7 +371,7 @@ Question h.
 <div class="callout-body-container callout-body">
 <p><strong>On peut aussi accéder en profondeur aux composantes comme par exemple par la commande</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>examen<span class="sc">$</span>note[<span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>examen<span class="sc">$</span>note[<span class="dv">7</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.4</code></pre>
 </div>
@@ -370,15 +393,15 @@ Question i.
 <div class="callout-body-container callout-body">
 <p><strong>La méthode la plus simple pour créer un vecteur consiste à énumérer ses éléments à l’aide de la fonction <code>c()</code> :</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mesdonnees<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">2.9</span>, <span class="fl">3.4</span>, <span class="fl">3.4</span>, <span class="fl">3.7</span>, <span class="fl">3.7</span>, <span class="fl">2.8</span>, <span class="fl">2.1</span>, <span class="fl">2.5</span>, <span class="fl">2.6</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>mesdonnees</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>mesdonnees<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">2.9</span>, <span class="fl">3.4</span>, <span class="fl">3.4</span>, <span class="fl">3.7</span>, <span class="fl">3.7</span>, <span class="fl">2.8</span>, <span class="fl">2.1</span>, <span class="fl">2.5</span>, <span class="fl">2.6</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>mesdonnees</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.9 3.4 3.4 3.7 3.7 2.8 2.1 2.5 2.6</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>couleurs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"bleu"</span>, <span class="st">"vert"</span>, <span class="st">"blanc"</span>, <span class="st">"noir"</span>, <span class="st">"jaune"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>couleurs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>couleurs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"bleu"</span>, <span class="st">"vert"</span>, <span class="st">"blanc"</span>, <span class="st">"noir"</span>, <span class="st">"jaune"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>couleurs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "bleu"  "vert"  "blanc" "noir"  "jaune"</code></pre>
 </div>
@@ -400,7 +423,7 @@ Question j.
 <div class="callout-body-container callout-body">
 <p><strong>On peut ôter des composantes d’un vecteur en indiquant entre crochets les indices précédés du signe négatif comme par exemple</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mesdonnees[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>mesdonnees[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.9 3.4 2.8 2.1 2.5 2.6</code></pre>
 </div>
@@ -422,7 +445,7 @@ Question k.
 <div class="callout-body-container callout-body">
 <p><strong>Finalement, le contenu de votre environnement de travail est affiché à l’aide de la fonction <code>ls()</code>.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "couleurs"        "cpus"            "examen"          "has_annotations"
 [5] "mesdonnees"     </code></pre>
@@ -461,7 +484,7 @@ Question a.
 <div class="callout-body-container callout-body">
 <p><strong>Construire un diagramme branche-et-feuilles, un histogramme et une boîte à moustaches des données observées à l’aide des commandes ci-dessous.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">stem</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is 2 digit(s) to the right of the |
@@ -479,15 +502,15 @@ Question a.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">pty=</span><span class="st">"s"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(cpus, <span class="at">xlab=</span><span class="st">"performance relative"</span>, <span class="at">ylab=</span><span class="st">"fréquence"</span>, <span class="at">main=</span><span class="st">""</span>, </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">"darkslategray4"</span>) </span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(cpus, <span class="at">xlab=</span><span class="st">"performance relative"</span>, <span class="at">col=</span><span class="st">"darkslategray4"</span>, <span class="at">horizontal=</span>T)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">pty=</span><span class="st">"s"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">hist</span>(cpus, <span class="at">xlab=</span><span class="st">"performance relative"</span>, <span class="at">ylab=</span><span class="st">"fréquence"</span>, <span class="at">main=</span><span class="st">""</span>, </span>
+<span id="cb26-3"><a href="#cb26-3"></a>     <span class="at">col=</span><span class="st">"darkslategray4"</span>) </span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="fu">boxplot</span>(cpus, <span class="at">xlab=</span><span class="st">"performance relative"</span>, <span class="at">col=</span><span class="st">"darkslategray4"</span>, <span class="at">horizontal=</span>T)</span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="fu">rug</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -559,18 +582,18 @@ Question c.
 <hr>
 <p>Avec la fonction <code>median()</code> nous calculons la performance médiane:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de la médiane</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>performance_mediane <span class="ot">&lt;-</span> <span class="fu">median</span>(cpus)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Performance relative médiane:"</span>, performance_mediane))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Calcul de la médiane</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>performance_mediane <span class="ot">&lt;-</span> <span class="fu">median</span>(cpus)</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Performance relative médiane:"</span>, performance_mediane))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Performance relative médiane: 42"</code></pre>
 </div>
 </div>
 <p>Avec la fonction <code>mean()</code> nous calculons la performance moyenne:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul de la moyenne</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>performance_moyenne <span class="ot">&lt;-</span> <span class="fu">mean</span>(cpus)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Performance relative moyenne:"</span>, performance_moyenne))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Calcul de la moyenne</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>performance_moyenne <span class="ot">&lt;-</span> <span class="fu">mean</span>(cpus)</span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Performance relative moyenne:"</span>, performance_moyenne))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Performance relative moyenne: 86.88"</code></pre>
 </div>
@@ -606,8 +629,8 @@ Question d.
 <div class="callout-body-container callout-body">
 <p><strong>Déterminer le(s) mode(s) des valeurs observées à l’aide des commandes suivantes :</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>n.cpus<span class="ot">&lt;-</span><span class="fu">table</span>(cpus)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">names</span>(n.cpus)[n.cpus<span class="sc">==</span><span class="fu">max</span>(n.cpus)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>n.cpus<span class="ot">&lt;-</span><span class="fu">table</span>(cpus)</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">as.numeric</span>(<span class="fu">names</span>(n.cpus)[n.cpus<span class="sc">==</span><span class="fu">max</span>(n.cpus)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 24 36 66</code></pre>
 </div>
@@ -632,7 +655,7 @@ Question e.
 <div class="callout-body-container callout-body">
 <p><strong>Que fait la commande suivante ?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">summary</span>(cpus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    7.00   24.00   42.00   86.88   73.50  915.00 </code></pre>
@@ -728,8 +751,8 @@ Question g.
 <hr>
 <p>Avec toutes les valeurs (incluant les atypiques) :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ecart_type_complet <span class="ot">&lt;-</span> <span class="fu">sd</span>(cpus)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type complet:"</span>, ecart_type_complet))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>ecart_type_complet <span class="ot">&lt;-</span> <span class="fu">sd</span>(cpus)</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type complet:"</span>, ecart_type_complet))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ecart type complet: 148.429415644512"</code></pre>
 </div>
@@ -737,24 +760,24 @@ Question g.
 <p>Sans les valeurs atypiques :</p>
 <p>D’abord, identifions les valeurs atypiques avec la fonction <code>boxplot()</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>bp_stats <span class="ot">&lt;-</span> <span class="fu">boxplot</span>(cpus, <span class="at">plot=</span><span class="cn">FALSE</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>atypiques <span class="ot">&lt;-</span> bp_stats<span class="sc">$</span>out</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Valeurs atypiques:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>bp_stats <span class="ot">&lt;-</span> <span class="fu">boxplot</span>(cpus, <span class="at">plot=</span><span class="cn">FALSE</span>)</span>
+<span id="cb38-2"><a href="#cb38-2"></a>atypiques <span class="ot">&lt;-</span> bp_stats<span class="sc">$</span>out</span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">print</span>(<span class="st">"Valeurs atypiques:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Valeurs atypiques:"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>atypiques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>atypiques</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 510 915 185 370</code></pre>
 </div>
 </div>
 <p>Maintenant, retirons ces valeurs atypiques de l’ensemble de données original :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cpus_sans_atypiques <span class="ot">&lt;-</span> cpus[<span class="sc">!</span>cpus <span class="sc">%in%</span> atypiques] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>cpus_sans_atypiques <span class="ot">&lt;-</span> cpus[<span class="sc">!</span>cpus <span class="sc">%in%</span> atypiques] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Enfin, calculons l’écart-type pour cet ensemble sans les valeurs atypiques :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type sans valeurs atypiques:"</span>, <span class="fu">sd</span>(cpus_sans_atypiques)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type sans valeurs atypiques:"</span>, <span class="fu">sd</span>(cpus_sans_atypiques)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ecart type sans valeurs atypiques: 38.5863984446273"</code></pre>
 </div>
@@ -794,11 +817,11 @@ Question a.
 <div class="callout-body-container callout-body">
 <p><strong>Tracer les boîtes à moustaches en parallèle en utilisant les commandes suivantes :</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>lblue<span class="ot">&lt;-</span><span class="st">"#528B8B"</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">pty=</span><span class="st">"s"</span>)</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(note<span class="sc">~</span>groupe, <span class="at">data=</span>examen, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>), <span class="at">xlab=</span><span class="st">"groupe"</span>, </span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">varwidth=</span>T, <span class="at">col=</span>lblue, <span class="at">main=</span><span class="st">"examen"</span>)</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">4</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>lblue<span class="ot">&lt;-</span><span class="st">"#528B8B"</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">par</span>(<span class="at">pty=</span><span class="st">"s"</span>)</span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="fu">boxplot</span>(note<span class="sc">~</span>groupe, <span class="at">data=</span>examen, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>), <span class="at">xlab=</span><span class="st">"groupe"</span>, </span>
+<span id="cb45-4"><a href="#cb45-4"></a>        <span class="at">varwidth=</span>T, <span class="at">col=</span>lblue, <span class="at">main=</span><span class="st">"examen"</span>)</span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">4</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -822,22 +845,22 @@ Question b.
 <hr>
 <p>Rajout des bâtonnets:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Séparation des notes par groupe</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>note.A <span class="ot">&lt;-</span> <span class="fu">split</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe)<span class="sc">$</span>A</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>note.B <span class="ot">&lt;-</span> <span class="fu">split</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe)<span class="sc">$</span>B</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des boîtes à moustaches</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>lblue <span class="ot">&lt;-</span> <span class="st">"#528B8B"</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">pty=</span><span class="st">"s"</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(note<span class="sc">~</span>groupe, <span class="at">data=</span>examen, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>), <span class="at">xlab=</span><span class="st">"groupe"</span>, </span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">varwidth=</span>T, <span class="at">col=</span>lblue, <span class="at">main=</span><span class="st">"examen"</span>)</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">4</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout des bâtonnets pour le groupe A</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(note.A, <span class="at">side=</span><span class="dv">2</span>)</span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout des bâtonnets pour le groupe B</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="fu">rug</span>(note.B, <span class="at">side=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Séparation des notes par groupe</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>note.A <span class="ot">&lt;-</span> <span class="fu">split</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe)<span class="sc">$</span>A</span>
+<span id="cb46-3"><a href="#cb46-3"></a>note.B <span class="ot">&lt;-</span> <span class="fu">split</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe)<span class="sc">$</span>B</span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="co"># Affichage des boîtes à moustaches</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>lblue <span class="ot">&lt;-</span> <span class="st">"#528B8B"</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="fu">par</span>(<span class="at">pty=</span><span class="st">"s"</span>)</span>
+<span id="cb46-8"><a href="#cb46-8"></a><span class="fu">boxplot</span>(note<span class="sc">~</span>groupe, <span class="at">data=</span>examen, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>), <span class="at">xlab=</span><span class="st">"groupe"</span>, </span>
+<span id="cb46-9"><a href="#cb46-9"></a>        <span class="at">varwidth=</span>T, <span class="at">col=</span>lblue, <span class="at">main=</span><span class="st">"examen"</span>)</span>
+<span id="cb46-10"><a href="#cb46-10"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">4</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb46-11"><a href="#cb46-11"></a></span>
+<span id="cb46-12"><a href="#cb46-12"></a><span class="co"># Ajout des bâtonnets pour le groupe A</span></span>
+<span id="cb46-13"><a href="#cb46-13"></a><span class="fu">rug</span>(note.A, <span class="at">side=</span><span class="dv">2</span>)</span>
+<span id="cb46-14"><a href="#cb46-14"></a></span>
+<span id="cb46-15"><a href="#cb46-15"></a><span class="co"># Ajout des bâtonnets pour le groupe B</span></span>
+<span id="cb46-16"><a href="#cb46-16"></a><span class="fu">rug</span>(note.B, <span class="at">side=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -895,12 +918,12 @@ Question e.
 <div class="callout-body-container callout-body">
 <p><strong>Calculer les écarts-types des deux groupes à l’aide des fonctions <code>by()</code> et <code>sd()</code>.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">by</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe, sd)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type groupe A:"</span>, <span class="fu">round</span>(result[<span class="st">'A'</span>], <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>result <span class="ot">&lt;-</span> <span class="fu">by</span>(examen<span class="sc">$</span>note, examen<span class="sc">$</span>groupe, sd)</span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type groupe A:"</span>, <span class="fu">round</span>(result[<span class="st">'A'</span>], <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ecart type groupe A: 0.866"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type groupe B:"</span>, <span class="fu">round</span>(result[<span class="st">'B'</span>], <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Ecart type groupe B:"</span>, <span class="fu">round</span>(result[<span class="st">'B'</span>], <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ecart type groupe B: 0.753"</code></pre>
 </div>
@@ -998,13 +1021,13 @@ Question a.
 <p><strong>Les données du recensement se trouvent dans la librairie arules de R qui doit être installée puis activée.</strong></p>
 <p><strong>Les observations sont lues dans le logiciel à l’aide de la commande</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"AdultUCI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">data</span>(<span class="st">"AdultUCI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>et les variables qui nous intéressent sont sélectionnées et stockées dans l’objet dframe par les commandes</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dframe<span class="ot">&lt;-</span>AdultUCI[, <span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"hours-per-week"</span>)]</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dframe)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"hours_per_week"</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dframe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>dframe<span class="ot">&lt;-</span>AdultUCI[, <span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"hours-per-week"</span>)]</span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">colnames</span>(dframe)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"education"</span>, <span class="st">"hours_per_week"</span>)</span>
+<span id="cb52-3"><a href="#cb52-3"></a><span class="fu">str</span>(dframe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   48842 obs. of  2 variables:
  $ education     : Ord.factor w/ 16 levels "Preschool"&lt;"1st-4th"&lt;..: 14 14 9 7 14 15 5 9 15 14 ...
@@ -1038,9 +1061,9 @@ Question a2.
 <div class="callout-body-container callout-body">
 <p><strong>Tracer les boîtes à moustaches en parallèle de la Figure 4 dans lesquelles est représenté le temps hebdomadaire consacré au travail par les Américains recensés selon leur formation. et commenter le graphique obtenu</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dframe, <span class="fu">aes</span>(<span class="at">x=</span>hours_per_week, <span class="at">y=</span>education)) <span class="sc">+</span> </span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"lightblue"</span>, <span class="at">alpha=</span><span class="fl">0.1</span>, <span class="at">position=</span><span class="st">"jitter"</span>) <span class="sc">+</span> </span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="dv">0</span>, <span class="at">alpha=</span><span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">ggplot</span>(dframe, <span class="fu">aes</span>(<span class="at">x=</span>hours_per_week, <span class="at">y=</span>education)) <span class="sc">+</span> </span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"lightblue"</span>, <span class="at">alpha=</span><span class="fl">0.1</span>, <span class="at">position=</span><span class="st">"jitter"</span>) <span class="sc">+</span> </span>
+<span id="cb54-3"><a href="#cb54-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="dv">0</span>, <span class="at">alpha=</span><span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1068,13 +1091,13 @@ Question b.
 <div class="callout-body-container callout-body">
 <p><strong>Calculer la proportion d’observations contenant des valeurs manquantes en utilisant les commandes ci-dessous.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(AdultUCI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">dim</span>(AdultUCI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 48842    15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>nrows<span class="ot">&lt;-</span><span class="fu">nrow</span>(AdultUCI)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>n.missing<span class="ot">&lt;-</span><span class="fu">rowSums</span>(<span class="fu">is.na</span>(AdultUCI))</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(n.missing<span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">/</span>nrows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>nrows<span class="ot">&lt;-</span><span class="fu">nrow</span>(AdultUCI)</span>
+<span id="cb57-2"><a href="#cb57-2"></a>n.missing<span class="ot">&lt;-</span><span class="fu">rowSums</span>(<span class="fu">is.na</span>(AdultUCI))</span>
+<span id="cb57-3"><a href="#cb57-3"></a><span class="fu">sum</span>(n.missing<span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">/</span>nrows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3824577</code></pre>
 </div>
@@ -1121,8 +1144,8 @@ Question d.
 <div class="callout-body-container callout-body">
 <p><strong>Pour chaque type de formation, on peut déterminer puis afficher à l’écran le temps maximal de travail hebdomadaire à l’aide des commandes</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>nx<span class="ot">&lt;-</span><span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, max, <span class="at">na.rm=</span>T)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>nx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>nx<span class="ot">&lt;-</span><span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, max, <span class="at">na.rm=</span>T)</span>
+<span id="cb59-2"><a href="#cb59-2"></a>nx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dframe$education: Preschool
 [1] 75
@@ -1175,11 +1198,11 @@ dframe$education: Doctorate
 </div>
 <p><strong>La formation pour laquelle un temps maximal a été observé se détermine par les commandes</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(nx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">max</span>(nx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 99</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(nx)[nx<span class="sc">==</span><span class="fu">max</span>(nx)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">names</span>(nx)[nx<span class="sc">==</span><span class="fu">max</span>(nx)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "5th-6th"      "7th-8th"      "9th"          "10th"         "11th"        
  [6] "12th"         "HS-grad"      "Prof-school"  "Assoc-acdm"   "Assoc-voc"   
@@ -1225,11 +1248,11 @@ Question e.
 <p><strong>En s’inspirant des commandes utilisées ci-dessus, déterminer la formation pour laquelle la distribution des temps de travail se caractérise par le plus petit écart-type.</strong></p>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer l'écart-type pour chaque niveau d'éducation</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>std_devs <span class="ot">&lt;-</span> <span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, sd, <span class="at">na.rm=</span>T)</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les écarts-types</span></span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(std_devs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># Calculer l'écart-type pour chaque niveau d'éducation</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a>std_devs <span class="ot">&lt;-</span> <span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, sd, <span class="at">na.rm=</span>T)</span>
+<span id="cb65-3"><a href="#cb65-3"></a></span>
+<span id="cb65-4"><a href="#cb65-4"></a><span class="co"># Afficher les écarts-types</span></span>
+<span id="cb65-5"><a href="#cb65-5"></a><span class="fu">print</span>(std_devs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dframe$education: Preschool
 [1] 11.434
@@ -1279,11 +1302,11 @@ dframe$education: Masters
 dframe$education: Doctorate
 [1] 14.9196</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver la formation avec le plus petit écart-type</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>min_std_dev <span class="ot">&lt;-</span> <span class="fu">min</span>(std_devs, <span class="at">na.rm=</span>T)</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>education_min_std_dev <span class="ot">&lt;-</span> <span class="fu">names</span>(std_devs)[std_devs <span class="sc">==</span> min_std_dev]</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"La formation avec le plus petit écart-type est:"</span>, education_min_std_dev, <span class="st">"avec un écart-type de:"</span>, <span class="fu">round</span>(min_std_dev, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># Trouver la formation avec le plus petit écart-type</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a>min_std_dev <span class="ot">&lt;-</span> <span class="fu">min</span>(std_devs, <span class="at">na.rm=</span>T)</span>
+<span id="cb67-3"><a href="#cb67-3"></a>education_min_std_dev <span class="ot">&lt;-</span> <span class="fu">names</span>(std_devs)[std_devs <span class="sc">==</span> min_std_dev]</span>
+<span id="cb67-4"><a href="#cb67-4"></a></span>
+<span id="cb67-5"><a href="#cb67-5"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"La formation avec le plus petit écart-type est:"</span>, education_min_std_dev, <span class="st">"avec un écart-type de:"</span>, <span class="fu">round</span>(min_std_dev, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "La formation avec le plus petit écart-type est: Assoc-voc avec un écart-type de: 10.943"</code></pre>
 </div>
@@ -1306,11 +1329,11 @@ Question f.
 <p><strong>Observe-t-on un résultat similaire en utilisant l’étendue interquartiles à l’aide de la fonction <code>IQR()</code>?</strong></p>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer l'IQR pour chaque niveau d'éducation</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>iqr_values <span class="ot">&lt;-</span> <span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, IQR, <span class="at">na.rm=</span>T)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher les valeurs de l'IQR</span></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(iqr_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Calculer l'IQR pour chaque niveau d'éducation</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a>iqr_values <span class="ot">&lt;-</span> <span class="fu">by</span>(dframe<span class="sc">$</span>hours_per_week, dframe<span class="sc">$</span>education, IQR, <span class="at">na.rm=</span>T)</span>
+<span id="cb69-3"><a href="#cb69-3"></a></span>
+<span id="cb69-4"><a href="#cb69-4"></a><span class="co"># Afficher les valeurs de l'IQR</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a><span class="fu">print</span>(iqr_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dframe$education: Preschool
 [1] 10
@@ -1360,11 +1383,11 @@ dframe$education: Masters
 dframe$education: Doctorate
 [1] 15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trouver la formation avec le plus petit IQR</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>min_iqr <span class="ot">&lt;-</span> <span class="fu">min</span>(iqr_values, <span class="at">na.rm=</span>T)</span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>education_min_iqr <span class="ot">&lt;-</span> <span class="fu">names</span>(iqr_values)[iqr_values <span class="sc">==</span> min_iqr]</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"La formation avec la plus petite étendue interquartile est:"</span>, education_min_iqr, <span class="st">"avec un IQR de:"</span>, <span class="fu">round</span>(min_iqr, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Trouver la formation avec le plus petit IQR</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>min_iqr <span class="ot">&lt;-</span> <span class="fu">min</span>(iqr_values, <span class="at">na.rm=</span>T)</span>
+<span id="cb71-3"><a href="#cb71-3"></a>education_min_iqr <span class="ot">&lt;-</span> <span class="fu">names</span>(iqr_values)[iqr_values <span class="sc">==</span> min_iqr]</span>
+<span id="cb71-4"><a href="#cb71-4"></a></span>
+<span id="cb71-5"><a href="#cb71-5"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"La formation avec la plus petite étendue interquartile est:"</span>, education_min_iqr, <span class="st">"avec un IQR de:"</span>, <span class="fu">round</span>(min_iqr, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "La formation avec la plus petite étendue interquartile est: 5th-6th avec un IQR de: 0"</code></pre>
 </div>
@@ -1372,13 +1395,13 @@ dframe$education: Doctorate
 <p>Non, nous n’avons pas les meme résultats: l’équart type et l’IQR n’identifient pas la meme formation. Cela signifie que ce niveau d’éducation a des valeurs extrêmes ou atypiques qui influencent l’écart-type mais pas l’IQR:</p>
 <p>Ici le graphique comparatif de ces deux formations “5th-6th” et “Assoc-voc” :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer le dataframe pour ne conserver que les formations "5th-6th" et "Assoc-voc"</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>subset_dframe <span class="ot">&lt;-</span> dframe <span class="sc">%&gt;%</span> <span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"5th-6th"</span>, <span class="st">"Assoc-voc"</span>))</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer le graphique</span></span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(subset_dframe, <span class="fu">aes</span>(<span class="at">x=</span>hours_per_week, <span class="at">y=</span>education)) <span class="sc">+</span> </span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"lightblue"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>, <span class="at">position=</span><span class="st">"jitter"</span>) <span class="sc">+</span> </span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="dv">0</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># Filtrer le dataframe pour ne conserver que les formations "5th-6th" et "Assoc-voc"</span></span>
+<span id="cb73-2"><a href="#cb73-2"></a>subset_dframe <span class="ot">&lt;-</span> dframe <span class="sc">%&gt;%</span> <span class="fu">filter</span>(education <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"5th-6th"</span>, <span class="st">"Assoc-voc"</span>))</span>
+<span id="cb73-3"><a href="#cb73-3"></a></span>
+<span id="cb73-4"><a href="#cb73-4"></a><span class="co"># Créer le graphique</span></span>
+<span id="cb73-5"><a href="#cb73-5"></a><span class="fu">ggplot</span>(subset_dframe, <span class="fu">aes</span>(<span class="at">x=</span>hours_per_week, <span class="at">y=</span>education)) <span class="sc">+</span> </span>
+<span id="cb73-6"><a href="#cb73-6"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"lightblue"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>, <span class="at">position=</span><span class="st">"jitter"</span>) <span class="sc">+</span> </span>
+<span id="cb73-7"><a href="#cb73-7"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.size=</span><span class="dv">0</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1461,26 +1484,26 @@ Question a.
 <div class="callout-body-container callout-body">
 <p><strong>Tracer le nuage de points de la largeur (<code>Petal.Width</code>) versus la longueur (<code>Petal.Length</code>) des pétales des iris en utilisant les librairies <code>ggplot2</code> et <code>ggforce</code>.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>pCol <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'#057076'</span>, <span class="st">'#ff8301'</span>, <span class="st">'#bf5ccb'</span>)</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>plot.iris<span class="ot">&lt;-</span><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width, <span class="at">col=</span>Species)) <span class="sc">+</span></span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span>pCol) <span class="sc">+</span></span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>, <span class="at">by=</span><span class="dv">1</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>)) <span class="sc">+</span></span>
-<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="dv">3</span>, <span class="at">by=</span><span class="fl">0.5</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="dv">3</span>)) <span class="sc">+</span> </span>
-<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Edgar Anderson's Iris Data"</span>,</span>
-<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="at">x=</span><span class="st">"Petal Length"</span>, </span>
-<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a><span class="at">y=</span><span class="st">"Petal Width"</span>) <span class="sc">+</span></span>
-<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">hjust=</span>.<span class="dv">5</span>),</span>
-<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a><span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">vjust=</span><span class="sc">-</span><span class="dv">2</span>),</span>
-<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a><span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">vjust=</span><span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Species), <span class="at">alpha=</span>.<span class="dv">6</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>()</span>
-<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-16"><a href="#cb74-16" aria-hidden="true" tabindex="-1"></a>plot.iris <span class="sc">+</span></span>
-<span id="cb74-17"><a href="#cb74-17" aria-hidden="true" tabindex="-1"></a>ggforce<span class="sc">::</span><span class="fu">geom_mark_ellipse</span>(</span>
-<span id="cb74-18"><a href="#cb74-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">fill=</span>Species, <span class="at">label=</span>Species), </span>
-<span id="cb74-19"><a href="#cb74-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha=</span>.<span class="dv">15</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span></span>
-<span id="cb74-20"><a href="#cb74-20" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>pCol <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'#057076'</span>, <span class="st">'#ff8301'</span>, <span class="st">'#bf5ccb'</span>)</span>
+<span id="cb74-2"><a href="#cb74-2"></a></span>
+<span id="cb74-3"><a href="#cb74-3"></a>plot.iris<span class="ot">&lt;-</span><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">y=</span>Petal.Width, <span class="at">col=</span>Species)) <span class="sc">+</span></span>
+<span id="cb74-4"><a href="#cb74-4"></a><span class="fu">scale_color_manual</span>(<span class="at">values=</span>pCol) <span class="sc">+</span></span>
+<span id="cb74-5"><a href="#cb74-5"></a><span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>, <span class="at">by=</span><span class="dv">1</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>)) <span class="sc">+</span></span>
+<span id="cb74-6"><a href="#cb74-6"></a><span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="dv">3</span>, <span class="at">by=</span><span class="fl">0.5</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="dv">3</span>)) <span class="sc">+</span> </span>
+<span id="cb74-7"><a href="#cb74-7"></a><span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Edgar Anderson's Iris Data"</span>,</span>
+<span id="cb74-8"><a href="#cb74-8"></a><span class="at">x=</span><span class="st">"Petal Length"</span>, </span>
+<span id="cb74-9"><a href="#cb74-9"></a><span class="at">y=</span><span class="st">"Petal Width"</span>) <span class="sc">+</span></span>
+<span id="cb74-10"><a href="#cb74-10"></a><span class="fu">theme</span>(<span class="at">plot.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">hjust=</span>.<span class="dv">5</span>),</span>
+<span id="cb74-11"><a href="#cb74-11"></a><span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">vjust=</span><span class="sc">-</span><span class="dv">2</span>),</span>
+<span id="cb74-12"><a href="#cb74-12"></a><span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">vjust=</span><span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb74-13"><a href="#cb74-13"></a><span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>Species), <span class="at">alpha=</span>.<span class="dv">6</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb74-14"><a href="#cb74-14"></a><span class="fu">theme_minimal</span>()</span>
+<span id="cb74-15"><a href="#cb74-15"></a></span>
+<span id="cb74-16"><a href="#cb74-16"></a>plot.iris <span class="sc">+</span></span>
+<span id="cb74-17"><a href="#cb74-17"></a>ggforce<span class="sc">::</span><span class="fu">geom_mark_ellipse</span>(</span>
+<span id="cb74-18"><a href="#cb74-18"></a>    <span class="fu">aes</span>(<span class="at">fill=</span>Species, <span class="at">label=</span>Species), </span>
+<span id="cb74-19"><a href="#cb74-19"></a>    <span class="at">alpha=</span>.<span class="dv">15</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span></span>
+<span id="cb74-20"><a href="#cb74-20"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-iris" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -1546,8 +1569,8 @@ Question d.
 <p><strong>Déterminer la corrélation entre la largeur et la longueur des pétales des iris en utilisant la fonction <code>cor()</code>.</strong></p>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris<span class="sc">$</span>Petal.Length, iris<span class="sc">$</span>Petal.Width)</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(correlation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(iris<span class="sc">$</span>Petal.Length, iris<span class="sc">$</span>Petal.Width)</span>
+<span id="cb75-2"><a href="#cb75-2"></a><span class="fu">print</span>(correlation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9628654</code></pre>
 </div>
@@ -1572,34 +1595,34 @@ Question e.
 <hr>
 <p>Nous pouvons créer un graphique incluant des boxplots et un graphique de densité. Cela nous permet de visualiser au mieux la répartition en fonction de la longueur des pétales:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot horizontal avec rug</span></span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">y=</span>Species, <span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_rug</span>(<span class="at">sides=</span><span class="st">"b"</span>) <span class="sc">+</span> </span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Boxplot of Iris Petal Length"</span>, <span class="at">x=</span><span class="st">"Petal Length [cm]"</span>) <span class="sc">+</span> </span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>,</span>
-<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb77-13"><a href="#cb77-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="st">"pt"</span>)) <span class="sc">+</span></span>
-<span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>))</span>
-<span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagramme de densité</span></span>
-<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
-<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Density Plot of Iris Petal Length"</span>, <span class="at">x=</span><span class="st">"Petal Length [cm]"</span>, <span class="at">y=</span><span class="st">"Density"</span>) <span class="sc">+</span></span>
-<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>,</span>
-<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>(),</span>
-<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="st">"pt"</span>)) <span class="sc">+</span></span>
-<span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>))</span>
-<span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-27"><a href="#cb77-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des deux graphiques l'un au-dessus de l'autre</span></span>
-<span id="cb77-28"><a href="#cb77-28" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb77-2"><a href="#cb77-2"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb77-3"><a href="#cb77-3"></a></span>
+<span id="cb77-4"><a href="#cb77-4"></a><span class="co"># Boxplot horizontal avec rug</span></span>
+<span id="cb77-5"><a href="#cb77-5"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">y=</span>Species, <span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
+<span id="cb77-6"><a href="#cb77-6"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb77-7"><a href="#cb77-7"></a>  <span class="fu">geom_rug</span>(<span class="at">sides=</span><span class="st">"b"</span>) <span class="sc">+</span> </span>
+<span id="cb77-8"><a href="#cb77-8"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Boxplot of Iris Petal Length"</span>, <span class="at">x=</span><span class="st">"Petal Length [cm]"</span>) <span class="sc">+</span> </span>
+<span id="cb77-9"><a href="#cb77-9"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb77-10"><a href="#cb77-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>,</span>
+<span id="cb77-11"><a href="#cb77-11"></a>        <span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb77-12"><a href="#cb77-12"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb77-13"><a href="#cb77-13"></a>        <span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="st">"pt"</span>)) <span class="sc">+</span></span>
+<span id="cb77-14"><a href="#cb77-14"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>))</span>
+<span id="cb77-15"><a href="#cb77-15"></a></span>
+<span id="cb77-16"><a href="#cb77-16"></a><span class="co"># Diagramme de densité</span></span>
+<span id="cb77-17"><a href="#cb77-17"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x=</span>Petal.Length, <span class="at">fill=</span>Species)) <span class="sc">+</span></span>
+<span id="cb77-18"><a href="#cb77-18"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb77-19"><a href="#cb77-19"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Density Plot of Iris Petal Length"</span>, <span class="at">x=</span><span class="st">"Petal Length [cm]"</span>, <span class="at">y=</span><span class="st">"Density"</span>) <span class="sc">+</span></span>
+<span id="cb77-20"><a href="#cb77-20"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb77-21"><a href="#cb77-21"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>,</span>
+<span id="cb77-22"><a href="#cb77-22"></a>        <span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb77-23"><a href="#cb77-23"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>(),</span>
+<span id="cb77-24"><a href="#cb77-24"></a>        <span class="at">plot.margin=</span><span class="fu">margin</span>(<span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="fl">5.5</span>, <span class="st">"pt"</span>)) <span class="sc">+</span></span>
+<span id="cb77-25"><a href="#cb77-25"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">7.5</span>))</span>
+<span id="cb77-26"><a href="#cb77-26"></a></span>
+<span id="cb77-27"><a href="#cb77-27"></a><span class="co"># Affichage des deux graphiques l'un au-dessus de l'autre</span></span>
+<span id="cb77-28"><a href="#cb77-28"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1607,15 +1630,15 @@ Question e.
 <p>Sur le graphique ci-dessus, nous pouvons voir que la longueur des pétales de Setosa est complètement distincte des deux autres espèces. Comme ces deux espèces n’ont pas beaoucoup de valeurs extremes, nous pouvons prendre la valeur moyenne de l’écart entre la valeur maximum de la longueur des pétales de Setosa et la valeur minimum de la longueur des pétales de Versicolor:<br>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la valeur max de la longueur des pétales de Setosa</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>setosa_max <span class="ot">&lt;-</span> <span class="fu">max</span>(iris<span class="sc">$</span>Petal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>])</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la valeur min de la longueur des pétales de Versicolor</span></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>versicolor_min <span class="ot">&lt;-</span> <span class="fu">min</span>(iris<span class="sc">$</span>Petal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"versicolor"</span>])</span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la valeur moyenne de l'écart</span></span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> (setosa_max <span class="sc">+</span> versicolor_min) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>mean_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="co"># Extraire la valeur max de la longueur des pétales de Setosa</span></span>
+<span id="cb78-2"><a href="#cb78-2"></a>setosa_max <span class="ot">&lt;-</span> <span class="fu">max</span>(iris<span class="sc">$</span>Petal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>])</span>
+<span id="cb78-3"><a href="#cb78-3"></a></span>
+<span id="cb78-4"><a href="#cb78-4"></a><span class="co"># Extraire la valeur min de la longueur des pétales de Versicolor</span></span>
+<span id="cb78-5"><a href="#cb78-5"></a>versicolor_min <span class="ot">&lt;-</span> <span class="fu">min</span>(iris<span class="sc">$</span>Petal.Length[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"versicolor"</span>])</span>
+<span id="cb78-6"><a href="#cb78-6"></a></span>
+<span id="cb78-7"><a href="#cb78-7"></a><span class="co"># Calculer la valeur moyenne de l'écart</span></span>
+<span id="cb78-8"><a href="#cb78-8"></a>mean_value <span class="ot">&lt;-</span> (setosa_max <span class="sc">+</span> versicolor_min) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb78-9"><a href="#cb78-9"></a>mean_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.45</code></pre>
 </div>
@@ -1638,20 +1661,20 @@ Question f.
 <div class="callout-body-container callout-body">
 <p><strong>Des animations peuvent être créées dans R en utilisant la librairie <code>gganimate</code>. Un exemple peut être conçu en utilisant le code ci-dessous.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>anim<span class="ot">&lt;-</span>plot.iris<span class="sc">+</span> </span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(Species,</span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">transition_length =</span> <span class="dv">2</span>,</span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">state_length =</span> <span class="dv">1</span>)</span>
-<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>anim</span>
-<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>anim <span class="sc">+</span> </span>
-<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">enter_fade</span>() <span class="sc">+</span> </span>
-<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exit_shrink</span>() <span class="sc">+</span> </span>
-<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">'Now showing {closest_state}'</span>,</span>
-<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">'Frame {frame} of {nframes}'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb80-2"><a href="#cb80-2"></a></span>
+<span id="cb80-3"><a href="#cb80-3"></a>anim<span class="ot">&lt;-</span>plot.iris<span class="sc">+</span> </span>
+<span id="cb80-4"><a href="#cb80-4"></a>  <span class="fu">transition_states</span>(Species,</span>
+<span id="cb80-5"><a href="#cb80-5"></a>                    <span class="at">transition_length =</span> <span class="dv">2</span>,</span>
+<span id="cb80-6"><a href="#cb80-6"></a>                    <span class="at">state_length =</span> <span class="dv">1</span>)</span>
+<span id="cb80-7"><a href="#cb80-7"></a></span>
+<span id="cb80-8"><a href="#cb80-8"></a>anim</span>
+<span id="cb80-9"><a href="#cb80-9"></a></span>
+<span id="cb80-10"><a href="#cb80-10"></a>anim <span class="sc">+</span> </span>
+<span id="cb80-11"><a href="#cb80-11"></a>  <span class="fu">enter_fade</span>() <span class="sc">+</span> </span>
+<span id="cb80-12"><a href="#cb80-12"></a>  <span class="fu">exit_shrink</span>() <span class="sc">+</span> </span>
+<span id="cb80-13"><a href="#cb80-13"></a>  <span class="fu">ggtitle</span>(<span class="st">'Now showing {closest_state}'</span>,</span>
+<span id="cb80-14"><a href="#cb80-14"></a>        <span class="at">subtitle =</span> <span class="st">'Frame {frame} of {nframes}'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1679,7 +1702,7 @@ Question g.
 <p><br></p>
 <p>La lecture de l’objet <code>iris</code> de <strong><em>R</em></strong> en Python s’effectue en utilisant la commande</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>iris_py <span class="op">=</span> r.iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1"></a>iris_py <span class="op">=</span> r.iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Reconstituer le graphique ci-dessous en utilisant en particulier les librairies <code>pandas</code>, <code>numpy</code> et le module <code>matplotlib.pyplot</code> de la bibliothèque <code>matplotlib</code> de Python.</strong></p>
 <div id="fig-iris-species-python" class="quarto-figure quarto-figure-center anchored">
@@ -1690,33 +1713,33 @@ Question g.
 </div>
 <hr>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">library</span>(reticulate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importation des bibliothèques nécessaires</span></span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Récupération du jeu de données Iris</span></span>
-<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>iris_py <span class="op">=</span> r.iris</span>
-<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition des couleurs pour chaque espèce d'Iris</span></span>
-<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {<span class="st">'setosa'</span>: <span class="st">'red'</span>, <span class="st">'versicolor'</span>: <span class="st">'green'</span>, <span class="st">'virginica'</span>: <span class="st">'blue'</span>}</span>
-<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un nuage de points (scatter plot) pour le jeu de données Iris</span></span>
-<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Les couleurs sont attribuées selon l'espèce de chaque point</span></span>
-<span id="cb83-14"><a href="#cb83-14" aria-hidden="true" tabindex="-1"></a>iris_py.plot.scatter(x<span class="op">=</span><span class="st">'Petal.Length'</span>, y<span class="op">=</span><span class="st">'Petal.Width'</span>, c<span class="op">=</span>iris_py[<span class="st">"Species"</span>].<span class="bu">map</span>(colors))</span>
-<span id="cb83-15"><a href="#cb83-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-16"><a href="#cb83-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition des labels pour les axes x et y</span></span>
-<span id="cb83-17"><a href="#cb83-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"petal length (cm)"</span>)</span>
-<span id="cb83-18"><a href="#cb83-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"petal width (cm)"</span>)</span>
-<span id="cb83-19"><a href="#cb83-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-20"><a href="#cb83-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition du titre du graphique</span></span>
-<span id="cb83-21"><a href="#cb83-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Iris Dataset"</span>)</span>
-<span id="cb83-22"><a href="#cb83-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-23"><a href="#cb83-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage du graphique</span></span>
-<span id="cb83-24"><a href="#cb83-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a><span class="co"># Importation des bibliothèques nécessaires</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb83-3"><a href="#cb83-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb83-4"><a href="#cb83-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb83-5"><a href="#cb83-5"></a></span>
+<span id="cb83-6"><a href="#cb83-6"></a><span class="co"># Récupération du jeu de données Iris</span></span>
+<span id="cb83-7"><a href="#cb83-7"></a>iris_py <span class="op">=</span> r.iris</span>
+<span id="cb83-8"><a href="#cb83-8"></a></span>
+<span id="cb83-9"><a href="#cb83-9"></a><span class="co"># Définition des couleurs pour chaque espèce d'Iris</span></span>
+<span id="cb83-10"><a href="#cb83-10"></a>colors <span class="op">=</span> {<span class="st">'setosa'</span>: <span class="st">'red'</span>, <span class="st">'versicolor'</span>: <span class="st">'green'</span>, <span class="st">'virginica'</span>: <span class="st">'blue'</span>}</span>
+<span id="cb83-11"><a href="#cb83-11"></a></span>
+<span id="cb83-12"><a href="#cb83-12"></a><span class="co"># Création d'un nuage de points (scatter plot) pour le jeu de données Iris</span></span>
+<span id="cb83-13"><a href="#cb83-13"></a><span class="co"># Les couleurs sont attribuées selon l'espèce de chaque point</span></span>
+<span id="cb83-14"><a href="#cb83-14"></a>iris_py.plot.scatter(x<span class="op">=</span><span class="st">'Petal.Length'</span>, y<span class="op">=</span><span class="st">'Petal.Width'</span>, c<span class="op">=</span>iris_py[<span class="st">"Species"</span>].<span class="bu">map</span>(colors))</span>
+<span id="cb83-15"><a href="#cb83-15"></a></span>
+<span id="cb83-16"><a href="#cb83-16"></a><span class="co"># Définition des labels pour les axes x et y</span></span>
+<span id="cb83-17"><a href="#cb83-17"></a>plt.xlabel(<span class="st">"petal length (cm)"</span>)</span>
+<span id="cb83-18"><a href="#cb83-18"></a>plt.ylabel(<span class="st">"petal width (cm)"</span>)</span>
+<span id="cb83-19"><a href="#cb83-19"></a></span>
+<span id="cb83-20"><a href="#cb83-20"></a><span class="co"># Définition du titre du graphique</span></span>
+<span id="cb83-21"><a href="#cb83-21"></a>plt.title(<span class="st">"Iris Dataset"</span>)</span>
+<span id="cb83-22"><a href="#cb83-22"></a></span>
+<span id="cb83-23"><a href="#cb83-23"></a><span class="co"># Affichage du graphique</span></span>
+<span id="cb83-24"><a href="#cb83-24"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="HEIG_PST_Labo1_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid" width="614"></p>
 </div>
@@ -1725,8 +1748,8 @@ Question g.
 </div>
 </div>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>À travers les différents exercices présentés dans ce rapport, nous avons exploré la puissance et la pertinence des analyses statistiques dans l’interprétation des données. Chaque exercice nous a permis d’aborder un aspect unique et instructif des méthodes d’analyse :</p>
 <p><strong>Visualisation et Interprétation des Données</strong> : La richesse des outils de visualisation que nous avons explorés dans ce rapport souligne leur importance dans l’analyse des données. Les graphiques de nuage de points nous ont aidés à comprendre les relations linéaires entre les variables. Les graphiques de densité ont fourni une perspective détaillée sur la distribution des données, révélant des tendances sous-jacentes. Les graphiques branche-feuille, quant à eux, ont offert une vue unique des données en soulignant leur structure. Les boxplots ont été particulièrement utiles pour identifier les valeurs médianes, les écarts et les éventuels valeurs aberrantes. Enfin, les histogrammes ont permis de visualiser la fréquence des données, donnant une vue d’ensemble de la distribution. Chacun de ces outils a joué un rôle crucial pour dépeindre les caractéristiques intrinsèques des ensembles de données examinés, montrant que la bonne visualisation est essentielle pour une interprétation précise et significative.</p>
 <p><strong>Études Botaniques</strong> : En examinant les caractéristiques des iris, nous avons constaté l’importance de la visualisation des données pour distinguer et classifier différentes espèces basées sur des caractéristiques mesurables. Cette analyse a également mis en évidence la nécessité de prêter attention aux détails, car même si certaines espèces peuvent se chevaucher en termes de caractéristiques, des différences subtiles peuvent toujours être identifiées.</p>
@@ -1735,13 +1758,7 @@ Question g.
 <p>En conclusion, ce rapport souligne la valeur des analyses statistiques dans divers domaines d’application. En utilisant une combinaison de compétences en statistiques, en visualisation et en programmation, nous pouvons dégager des tendances et des modèles pertinents à partir de grands ensembles de données. Alors que le monde génère de plus en plus de données chaque jour, la maîtrise de ces compétences devient d’autant plus essentielle pour naviguer dans ce paysage en constante évolution.</p>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Pour de plus amples informations, voir “<strong><em>R</em></strong> pour les débutants”, E. Paradis, 2005, pages 12–16.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

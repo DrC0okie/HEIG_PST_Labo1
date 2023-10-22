@@ -1,9 +1,23 @@
 ---
 title: "Analyse exploratoire des données"
 subtitle: "De la théorie à la pratique (TP 1)"
-author: "Timothée Van Hove"
-format: html
-editor: visual
+author: 
+  - name: Timothée Van Hove
+    email: timothee.vanhove@heig-vd.ch
+highlight-style: github
+format:
+  html:
+    theme: cosmo
+    monobackgroundcolor: rgb(255,250,240)
+    toc: true
+    toc-location: left
+    reference-location: document
+    code-line-numbers: true
+date: 'last-modified'
+date-format: '[This version:] MMMM D, YYYY'
+number-sections: false
+editor: 
+  visual
 ---
 
 ## Introduction
